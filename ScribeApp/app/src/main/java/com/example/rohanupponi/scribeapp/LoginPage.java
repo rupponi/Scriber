@@ -66,6 +66,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        /*
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -89,6 +90,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
                 attemptLogin();
             }
         });
+        */
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
