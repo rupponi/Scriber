@@ -3,6 +3,7 @@ package com.example.rohanupponi.scribeapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -19,15 +20,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +34,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class IntroPage extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -65,7 +62,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_intro_page);
         /*
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -91,6 +88,22 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
             }
         });
         */
+
+        Button patientOptionButton = (Button) findViewById(R.id.patient_option);
+        patientOptionButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent toPatientLogin = new Intent(IntroPage.this, PatientLogin.class);
+                startActivity(toPatientLogin);
+            }
+        });
+
+        Button doctorOptionButton = (Button) findViewById(R.id.doctor_option);
+        doctorOptionButton.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View view) {
+               Intent toDoctorLogin = new Intent(IntroPage.this, DoctorLogin.class);
+               startActivity(toDoctorLogin);
+           }
+        });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -275,7 +288,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginPage.this,
+                new ArrayAdapter<>(IntroPage.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
