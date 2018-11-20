@@ -23,7 +23,8 @@ public class PatientLogin extends AppCompatActivity {
         Button patientForgotPassButton = (Button) findViewById(R.id.patient_forgot_password_button);
         patientForgotPassButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // TODO: Patient forgot password (Forgot password form to send email recovery).
+                Intent patientRecoverAccount = new Intent(getApplicationContext(), PatientForgotPassword.class);
+                startActivity(patientRecoverAccount);
             }
         });
 
@@ -31,7 +32,7 @@ public class PatientLogin extends AppCompatActivity {
         Button patientRegisterButton = (Button) findViewById(R.id.patient_register_button);
         patientRegisterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent registerPatient = new Intent(PatientLogin.this, PatientRegistration.class);
+                Intent registerPatient = new Intent(getApplicationContext(), PatientRegistration.class);
                 startActivity(registerPatient);
             }
         });

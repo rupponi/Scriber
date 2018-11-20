@@ -31,12 +31,15 @@
             android:label="@string/doctor_login_screen_title" />
         <activity
             android:name=".DoctorRegistration"
-            android:label="@string/doctor_register_screen_title">
-        </activity>
+            android:label="@string/doctor_register_screen_title" />
         <activity
             android:name=".PatientRegistration"
-            android:label="@string/patient_register_screen_title">
-        </activity>
+            android:label="@string/patient_register_screen_title" />
+        <activity
+            android:name=".PatientForgotPassword"
+            android:label="@string/account_recovery_screen_title" />
+        <activity android:name=".DoctorForgotPassword"
+            android:label="@string/account_recovery_screen_title"></activity>
     </application>
 
 </manifest>

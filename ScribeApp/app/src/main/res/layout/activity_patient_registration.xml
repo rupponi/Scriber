@@ -93,6 +93,7 @@
             android:layout_marginBottom="80dp"/>
 
         <Button
+            android:id="@+id/new_patient_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background = "@color/colorPrimaryDark"

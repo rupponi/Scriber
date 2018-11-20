@@ -92,7 +92,7 @@ public class IntroPage extends AppCompatActivity implements LoaderCallbacks<Curs
         Button patientOptionButton = (Button) findViewById(R.id.patient_option);
         patientOptionButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent toPatientLogin = new Intent(IntroPage.this, PatientLogin.class);
+                Intent toPatientLogin = new Intent(getApplicationContext(), PatientLogin.class);
                 startActivity(toPatientLogin);
             }
         });
@@ -100,7 +100,7 @@ public class IntroPage extends AppCompatActivity implements LoaderCallbacks<Curs
         Button doctorOptionButton = (Button) findViewById(R.id.doctor_option);
         doctorOptionButton.setOnClickListener(new View.OnClickListener() {
            public void onClick(View view) {
-               Intent toDoctorLogin = new Intent(IntroPage.this, DoctorLogin.class);
+               Intent toDoctorLogin = new Intent(getApplicationContext(), DoctorLogin.class);
                startActivity(toDoctorLogin);
            }
         });

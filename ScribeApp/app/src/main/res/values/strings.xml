@@ -13,6 +13,11 @@
     <string name="doctor_register_screen_title">Doctor Registration</string>
 
 
+    <!-- General -->
+    <string name="password_recover_prompt">Please enter your registered email to recover your account</string>
+    <string name="account_recovery_screen_title">Recover Your Account</string>
+
+
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
