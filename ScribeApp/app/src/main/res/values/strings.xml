@@ -4,6 +4,12 @@
     <string name="patient_option">Patient</string>
     <string name="doctor_option">Doctor</string>
 
+    <!-- Patient login screen -->
+    <string name="patient_screen_title">Patient Login</string>
+
+    <!-- Doctor login screen -->
+    <string name="doctor_screen_title">Doctor Login</string>
+
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>

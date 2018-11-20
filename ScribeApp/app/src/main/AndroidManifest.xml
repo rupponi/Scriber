@@ -23,8 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PatientLogin" />
-        <activity android:name=".DoctorLogin"></activity>
+        <activity
+            android:name=".PatientLogin"
+            android:label="@string/patient_screen_title">
+        </activity>
+        <activity
+            android:name=".DoctorLogin"
+            android:label="@string/doctor_screen_title">
+        </activity>
     </application>
 
 </manifest>

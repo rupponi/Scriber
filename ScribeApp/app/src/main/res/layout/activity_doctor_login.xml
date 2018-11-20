@@ -15,8 +15,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
-            android:text="Doctor Login"
+            android:layout_marginBottom="80dp"
+            android:text="Welcome!"
             android:textSize="40sp"
             android:textAlignment="center"/>
 
@@ -24,25 +24,70 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username"
+            android:textStyle="bold"
+            android:textColor = "#000"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/patient_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:layout_marginBottom="40dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
+            android:textStyle="bold"
+            android:textColor = "@color/black"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/patient_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"/>
+            android:textSize="10sp"
+            android:layout_marginBottom="60dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.99"
+                android:background="@color/colorPrimaryDark"
+                android:text="Forgot password?"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.02"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.99"
+                android:background="@color/colorPrimaryDark"
+                android:text="Sign Up"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
