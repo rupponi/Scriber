@@ -29,7 +29,7 @@
             android:id="@+id/patient_name_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -44,7 +44,7 @@
             android:id="@+id/patient_email_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -59,7 +59,7 @@
             android:id="@+id/patient_new_username_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -74,7 +74,8 @@
             android:id="@+id/patient_new_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
+            android:inputType="textPassword"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -89,7 +90,8 @@
             android:id="@+id/patient_new_password_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
+            android:inputType="textPassword"
             android:layout_marginBottom="80dp"/>
 
         <Button

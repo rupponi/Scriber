@@ -32,7 +32,7 @@
             android:id="@+id/patient_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
             android:layout_marginBottom="40dp"/>
 
         <TextView
@@ -47,7 +47,8 @@
             android:id="@+id/patient_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="@dimen/user_entry_field_text"
+            android:inputType="textPassword"
             android:layout_marginBottom="60dp"/>
 
         <Button
