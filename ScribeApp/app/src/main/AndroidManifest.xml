@@ -25,11 +25,17 @@
         </activity>
         <activity
             android:name=".PatientLogin"
-            android:label="@string/patient_screen_title">
-        </activity>
+            android:label="@string/patient_login_screen_title" />
         <activity
             android:name=".DoctorLogin"
-            android:label="@string/doctor_screen_title">
+            android:label="@string/doctor_login_screen_title" />
+        <activity
+            android:name=".DoctorRegistration"
+            android:label="@string/doctor_register_screen_title">
+        </activity>
+        <activity
+            android:name=".PatientRegistration"
+            android:label="@string/patient_register_screen_title">
         </activity>
     </application>
 

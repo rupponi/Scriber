@@ -4,11 +4,14 @@
     <string name="patient_option">Patient</string>
     <string name="doctor_option">Doctor</string>
 
-    <!-- Patient login screen -->
-    <string name="patient_screen_title">Patient Login</string>
+    <!-- Patient flow -->
+    <string name="patient_login_screen_title">Patient Login</string>
+    <string name="patient_register_screen_title">Patient Registration</string>
 
-    <!-- Doctor login screen -->
-    <string name="doctor_screen_title">Doctor Login</string>
+    <!-- Doctor flow -->
+    <string name="doctor_login_screen_title">Doctor Login</string>
+    <string name="doctor_register_screen_title">Doctor Registration</string>
+
 
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
