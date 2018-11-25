@@ -29,7 +29,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/patient_username"
+            android:id="@+id/doctor_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"
@@ -44,7 +44,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/patient_password"
+            android:id="@+id/doctor_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"

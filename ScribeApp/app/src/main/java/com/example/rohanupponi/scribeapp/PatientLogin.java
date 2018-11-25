@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class PatientLogin extends AppCompatActivity {
 
@@ -17,6 +21,12 @@ public class PatientLogin extends AppCompatActivity {
         patientLoginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // TODO: Patient login authentication (Firebase).
+                EditText emailfield = (EditText) findViewById(R.id.patient_username);
+                EditText emailpass = (EditText) findViewById(R.id.patient_password);
+                String email = emailfield.getText().toString();
+                String pass = emailpass.getText().toString();
+
+                FirebaseAuth patientSigninAuth = FirebaseAuth.getInstance();
             }
         });
 
