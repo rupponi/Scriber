@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class PatientForgotPassword extends AppCompatActivity {
+    public static final String TAG = "PatientForgotPassword";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,16 +1,22 @@
 package com.example.rohanupponi.scribeapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PatientLogin extends AppCompatActivity {
+    public static final String TAG = "PatientLogin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +30,25 @@ public class PatientLogin extends AppCompatActivity {
                 EditText emailfield = (EditText) findViewById(R.id.patient_username);
                 EditText emailpass = (EditText) findViewById(R.id.patient_password);
                 String email = emailfield.getText().toString();
-                String pass = emailpass.getText().toString();
+                String password = emailpass.getText().toString();
 
-                FirebaseAuth patientSigninAuth = FirebaseAuth.getInstance();
+                FirebaseAuth patientLoginAuth = FirebaseAuth.getInstance();
+                patientLoginAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(PatientLogin.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> authenticate) {
+                        if (authenticate.isSuccessful()) {
+                            Log.d(PatientLogin.TAG, "Sign in: Successful");
+                            Toast test = Toast.makeText(getApplicationContext(), "Sign in: Successful", Toast.LENGTH_LONG);
+                            test.show();
+                        }
+                        else {
+                            Log.d(PatientLogin.TAG, "Sign in: Failure");
+                            Toast test = Toast.makeText(getApplicationContext(), "Sign in: Failure", Toast.LENGTH_LONG);
+                            test.show();
+                        }
+                    }
+                });
+
             }
         });
 

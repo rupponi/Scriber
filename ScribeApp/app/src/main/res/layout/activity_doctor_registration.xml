@@ -12,10 +12,12 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-        </View>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/favicon"
+            android:layout_marginBottom="30dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/doctor_name_field"
+            android:id="@+id/new_doctor_name_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"
@@ -41,22 +43,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/doctor_email_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/user_entry_field_text"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Username"
-            android:textStyle="bold"
-            android:textColor = "@color/black"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/doctor_new_username_field"
+            android:id="@+id/new_doctor_email_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"
@@ -71,7 +58,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/doctor_new_password"
+            android:id="@+id/new_doctor_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"
@@ -87,7 +74,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/doctor_new_password_confirm"
+            android:id="@+id/new_doctor_password_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/user_entry_field_text"
