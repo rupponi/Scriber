@@ -35,6 +35,11 @@ public class DoctorRegistration extends AppCompatActivity {
                 String password = passwordfield.getText().toString();
                 String passwordconfirm = passwordconfirmfield.getText().toString();
 
+                if (!password.equals(passwordconfirm)) {
+                    Toast test = Toast.makeText(getApplicationContext(), "Error: Passwords don't match. Please make sure to confirm correct password.", Toast.LENGTH_LONG);
+                    test.show();
+                }
+
                 FirebaseAuth doctorRegisterAuth = FirebaseAuth.getInstance();
                 doctorRegisterAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(DoctorRegistration.this, new OnCompleteListener<AuthResult>() {
                     @Override
