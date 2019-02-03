@@ -38,8 +38,13 @@
         <activity
             android:name=".PatientForgotPassword"
             android:label="@string/account_recovery_screen_title" />
-        <activity android:name=".DoctorForgotPassword"
-            android:label="@string/account_recovery_screen_title"></activity>
+        <activity
+            android:name=".DoctorForgotPassword"
+            android:label="@string/account_recovery_screen_title" />
+        <activity
+            android:name=".DoctorHome"
+            android:label="@string/title_activity_doctor_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
