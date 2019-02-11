@@ -38,8 +38,8 @@ public class PatientLogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> authenticate) {
                         if (authenticate.isSuccessful()) {
                             Log.d(PatientLogin.TAG, "Sign in: Successful");
-                            Toast test = Toast.makeText(getApplicationContext(), "Sign in: Successful", Toast.LENGTH_LONG);
-                            test.show();
+                            Intent accessPatientHome = new Intent (getApplicationContext(), PatientHome.class);
+                            startActivity(accessPatientHome);
                         }
                         else {
                             Log.d(PatientLogin.TAG, "Sign in: Failure");

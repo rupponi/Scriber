@@ -30,4 +30,5 @@
         completions."
     </string>
     <string name="title_activity_doctor_home">DoctorHome</string>
+    <string name="title_activity_patient_profile">PatientProfile</string>
 </resources>
