@@ -29,7 +29,7 @@ public class PatientHome extends AppCompatActivity {
         patientLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PatientLogin.class);
+                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
                 startActivity(intent);
             }
         });

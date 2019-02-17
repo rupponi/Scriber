@@ -47,7 +47,7 @@ public class PatientRegistration extends AppCompatActivity {
                         if (register.isSuccessful()) {
                             Toast test = Toast.makeText(getApplicationContext(), "Congrats you can now log in on your new account!", Toast.LENGTH_LONG);
                             test.show();
-                            Intent redirectToPatientLogin = new Intent(getApplicationContext(), PatientLogin.class);
+                            Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
                             startActivity(redirectToPatientLogin);
                         }
                         else {
