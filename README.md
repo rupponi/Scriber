@@ -1,2 +1,1 @@
-# Scribe-App
-An app for secure transfer of stored general patient data to expedite patient sign ins.
+![Documentation](https://github.com/rupponi/Scribe-App/tree/master/res/snapshot-thesis.PNG)
