@@ -1,1 +1,1 @@
-![Documentation](https://github.com/rupponi/Scribe-App/tree/master/res/snapshot-thesis.PNG)
+![Documentation](https://github.com/rupponi/Scribe-App/tree/master/res/snapshot-thesis.png)
