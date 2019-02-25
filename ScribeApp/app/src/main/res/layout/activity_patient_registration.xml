@@ -93,10 +93,14 @@
             android:id="@+id/new_patient_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background = "@color/colorPrimaryDark"
-            android:text="Register"
+            android:background = "@drawable/rounded_button_layout"
+            android:text="@string/register_prompt"
             android:textSize="20sp"
             android:textColor="@color/white"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40sp"/>
 
     </LinearLayout>
 

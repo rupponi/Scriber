@@ -60,18 +60,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button_layout"
-                android:text="Login"
+                android:text="@string/login_label"
                 android:textColor="@color/white"
                 android:textSize="@dimen/full_size_button_text"
                 android:layout_marginBottom="10dp"/>
 
             <TextView
-                android:id="@+id/forgot_password_button"
+                android:id="@+id/forgot_password_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Forgot password?"
+                android:text="@string/forgot_pass_prompt"
                 android:textColor="@color/colorAccent"
+                android:clickable="true"
                 android:textSize="@dimen/full_size_button_text"/>
 
             <View
@@ -85,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Don't have an account?"
+                android:text="@string/no_account_prompt"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/user_entry_field_text"/>
 
@@ -94,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button_layout_inverted"
-                android:text="Sign Up"
+                android:text="@string/sign_up_label"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/full_size_button_text" />
 

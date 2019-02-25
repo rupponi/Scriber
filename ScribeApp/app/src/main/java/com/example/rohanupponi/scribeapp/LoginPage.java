@@ -5,39 +5,34 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import org.w3c.dom.Document;
-
-import java.io.IOException;
-import java.util.Map;
 
 public class LoginPage extends AppCompatActivity {
     public static final String TAG = "LoginPage";
     private String[] user_creds = new String[2];
 
+    Button loginButton, signUpButton;
+    TextView forgotPassLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        Button loginButton = findViewById(R.id.login_button);
-        Button signUpButton = findViewById(R.id.sign_up_button);
+        loginButton = findViewById(R.id.login_button);
+        signUpButton = findViewById(R.id.sign_up_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -105,6 +100,9 @@ public class LoginPage extends AppCompatActivity {
 
             }
         });
+
+        forgotPassLink = findViewById(R.id.forgot_password_link);
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

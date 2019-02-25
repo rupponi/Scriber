@@ -19,4 +19,16 @@
     <string name="title_activity_doctor_home">DoctorHome</string>
     <string name="title_activity_patient_profile">PatientProfile</string>
     <string name="title_activity_login_page">LoginPage</string>
+
+
+
+    <!-- Login Flow -->
+    <string name="email_field">email</string>
+    <string name="password_field"></string>
+    <string name="login_label">Login</string>
+    <string name="forgot_pass_prompt">Forgot password?</string>
+    <string name="no_account_prompt">Don\'t have an account?</string>
+    <string name="sign_up_label">Sign Up</string>
+    <string name="register_prompt">Register</string>
+    <string name="reset_pass_prompt">Reset Password</string>
 </resources>
