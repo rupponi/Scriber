@@ -6,28 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".DoctorHome">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:text="Welcome doctor!"
+            android:textSize="40sp"
+            android:textAlignment="center"/>
 
-    </android.support.design.widget.AppBarLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/Doctor_Edit_Profile"
+            android:layout_width="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/edit_icon"
+            android:layout_margin="@dimen/fab_margin"/>
 
-
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

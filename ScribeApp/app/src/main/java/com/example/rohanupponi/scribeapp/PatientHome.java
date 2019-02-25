@@ -1,5 +1,6 @@
 package com.example.rohanupponi.scribeapp;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,28 +10,18 @@ import android.content.Intent;
 public class PatientHome extends AppCompatActivity {
     public static final String TAG = "PatientHome";
 
-    private Button patientEditProfile;
-    private Button patientLogout;
+    private FloatingActionButton patientEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_home);
-        patientEditProfile = (Button) findViewById(R.id.Patient_Edit_Profile);
+        patientEditProfile = findViewById(R.id.Patient_Edit_Profile);
         patientEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent openProfile = new Intent(getApplicationContext(), PatientProfile.class);
                 startActivity(openProfile);
-            }
-        });
-
-        patientLogout = (Button) findViewById(R.id.Patient_Logout);
-        patientLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
-                startActivity(intent);
             }
         });
 
