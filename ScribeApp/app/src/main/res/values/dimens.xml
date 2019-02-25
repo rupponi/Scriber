@@ -5,4 +5,6 @@
     <dimen name="user_entry_field_text">20sp</dimen>
     <dimen name="full_size_button_text">15sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_entry_separator">10sp</dimen>
 </resources>

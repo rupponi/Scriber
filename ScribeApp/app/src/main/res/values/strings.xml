@@ -31,4 +31,16 @@
     <string name="sign_up_label">Sign Up</string>
     <string name="register_prompt">Register</string>
     <string name="reset_pass_prompt">Reset Password</string>
+
+    <string name="name_prompt">Name</string>
+    <string name="email_prompt">Email</string>
+    <string name="dob_month_prompt">Month</string>
+    <string name="dob_day_prompt">Day</string>
+    <string name="dob_year_prompt">Year</string>
+    <string name="address_prompt">Address</string>
+    <string name="address_city_prompt">City</string>
+    <string name="address_state_prompt">State</string>
+    <string name="address_zip_prompt">ZIP Code</string>
+    <string name="new_pass_prompt">New Password</string>
+    <string name="confirm_pass_prompt">Confirm Password</string>
 </resources>

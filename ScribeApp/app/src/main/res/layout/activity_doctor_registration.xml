@@ -9,85 +9,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@mipmap/favicon"
-            android:layout_marginBottom="30dp"/>
+            android:layout_gravity="top|center"
+            android:src="@mipmap/favicon"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textStyle="bold"
-            android:textColor = "@color/black"
-            android:textSize="20sp" />
+            android:layout_height="30sp"/>
 
         <EditText
             android:id="@+id/new_doctor_name_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/name_prompt"
             android:textSize="@dimen/user_entry_field_text"
             android:singleLine = "true"
-            android:imeOptions="actionNext"
-            android:layout_marginBottom="10dp"/>
+            android:imeOptions="actionNext"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textStyle="bold"
-            android:textColor = "@color/black"
-            android:textSize="20sp" />
+            android:layout_height="@dimen/text_entry_separator"/>
 
         <EditText
             android:id="@+id/new_doctor_email_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/email_prompt"
             android:textSize="@dimen/user_entry_field_text"
             android:singleLine = "true"
-            android:imeOptions="actionNext"
-            android:layout_marginBottom="10dp"/>
+            android:imeOptions="actionNext"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textStyle="bold"
-            android:textColor = "@color/black"
-            android:textSize="20sp" />
+            android:layout_height="@dimen/text_entry_separator"/>
 
         <EditText
             android:id="@+id/new_doctor_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/new_pass_prompt"
             android:textSize="@dimen/user_entry_field_text"
             android:singleLine = "true"
             android:imeOptions="actionNext"
-            android:inputType="textPassword"
-            android:layout_marginBottom="10dp"/>
+            android:inputType="textPassword"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirm Password"
-            android:textStyle="bold"
-            android:textColor = "@color/black"
-            android:textSize="20sp" />
+            android:layout_height="@dimen/text_entry_separator"/>
 
         <EditText
             android:id="@+id/new_doctor_password_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/confirm_pass_prompt"
             android:textSize="@dimen/user_entry_field_text"
             android:singleLine = "true"
             android:imeOptions="actionNext"
-            android:inputType="textPassword"
-            android:layout_marginBottom="80dp"/>
+            android:inputType="textPassword"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
 
         <Button
             android:id="@+id/new_doctor_button"
@@ -95,12 +82,12 @@
             android:layout_height="wrap_content"
             android:background = "@drawable/rounded_button_layout"
             android:text="@string/register_prompt"
-            android:textSize="20sp"
+            android:textSize="@dimen/full_size_button_text"
             android:textColor="@color/white"/>
         
         <View
             android:layout_width="match_parent"
-            android:layout_height="40sp"/>
+            android:layout_height="10sp"/>
 
     </LinearLayout>
 
