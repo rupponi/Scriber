@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountSelection">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are you a:"
+            android:textSize="50sp"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30sp"/>
+
+        <Button
+            android:id="@+id/new_patient_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_layout"
+            android:textColor="#fff"
+            android:textSize="@dimen/full_size_button_text"
+            android:text="PATIENT"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30sp"/>
+
+        <Button
+            android:id="@+id/new_doctor_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_layout"
+            android:textColor="#fff"
+            android:textSize="@dimen/full_size_button_text"
+            android:text="DOCTOR"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

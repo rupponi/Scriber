@@ -30,39 +30,26 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="80dp"
                 android:src = "@mipmap/favicon"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:textStyle="bold"
-                android:textColor = "#000"
-                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/user_entry_field_text"
+                android:hint="email"
                 android:singleLine = "true"
                 android:imeOptions="actionNext"
                 android:layout_marginBottom="40dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:textStyle="bold"
-                android:textColor = "@color/black"
-                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/user_entry_field_text"
+                android:hint="password"
                 android:inputType="textPassword"
                 android:singleLine = "true"
                 android:imeOptions="actionNext"
@@ -72,43 +59,44 @@
                 android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/rounded_button_layout"
                 android:text="Login"
                 android:textColor="@color/white"
+                android:textSize="@dimen/full_size_button_text"
                 android:layout_marginBottom="10dp"/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/forgot_password_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:orientation="horizontal">
+                android:textAlignment="center"
+                android:text="Forgot password?"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/full_size_button_text"/>
 
-                <Button
-                    android:id="@+id/forgot_password_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.99"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Forgot password?"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="10sp"/>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.02"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Don't have an account?"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/user_entry_field_text"/>
 
-                <Button
-                    android:id = "@+id/register_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.99"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Sign Up"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
+            <Button
+                android:id = "@+id/sign_up_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button_layout_inverted"
+                android:text="Sign Up"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/full_size_button_text" />
 
         </LinearLayout>
 </LinearLayout>

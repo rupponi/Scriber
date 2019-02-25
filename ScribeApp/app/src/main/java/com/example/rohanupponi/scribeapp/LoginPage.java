@@ -37,6 +37,8 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
         Button loginButton = findViewById(R.id.login_button);
+        Button signUpButton = findViewById(R.id.sign_up_button);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 EditText emailfield = findViewById(R.id.login_email);
@@ -103,6 +105,15 @@ public class LoginPage extends AppCompatActivity {
 
             }
         });
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerUser = new Intent(getApplicationContext(), AccountSelection.class);
+                startActivity(registerUser);
+            }
+        });
+
     }
 
 }
