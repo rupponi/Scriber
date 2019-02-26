@@ -42,6 +42,18 @@ public class LoginPage extends AppCompatActivity {
                 String email = emailfield.getText().toString().trim();
                 String password = passwordfield.getText().toString().trim();
 
+                if (email.matches("")) {
+                    Toast requestEmail = Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_LONG);
+                    requestEmail.show();
+                    return;
+                }
+
+                if (password.matches("")) {
+                    Toast requestPassword = Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_LONG);
+                    requestPassword.show();
+                    return;
+                }
+
                 emailfield.getText().clear();
                 passwordfield.getText().clear();
 
@@ -102,6 +114,13 @@ public class LoginPage extends AppCompatActivity {
         });
 
         forgotPassLink = findViewById(R.id.forgot_password_link);
+        forgotPassLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recoverUser = new Intent(getApplicationContext(), ForgotPassword.class);
+                startActivity(recoverUser);
+            }
+        });
 
 
         signUpButton.setOnClickListener(new View.OnClickListener() {

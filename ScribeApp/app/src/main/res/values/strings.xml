@@ -21,7 +21,6 @@
     <string name="title_activity_login_page">LoginPage</string>
 
 
-
     <!-- Login Flow -->
     <string name="email_field">email</string>
     <string name="password_field"></string>

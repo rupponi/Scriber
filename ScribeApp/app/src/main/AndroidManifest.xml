@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountSelection"></activity>
+        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".AccountSelection" />
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login_page"
