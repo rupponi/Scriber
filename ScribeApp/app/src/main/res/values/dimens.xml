@@ -2,9 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
     <dimen name="user_entry_field_text">20sp</dimen>
     <dimen name="full_size_button_text">15sp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="user_profile_text">20sp</dimen>
 
     <dimen name="text_entry_separator">10sp</dimen>
 </resources>

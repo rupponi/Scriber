@@ -12,13 +12,91 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="top|center"
+            android:src="@mipmap/favicon"/>
+
         <TextView
+            android:id="@+id/patient_greeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
-            android:text="Welcome patient!"
             android:textSize="40sp"
             android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/patient_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/Patient_Edit_Profile"
