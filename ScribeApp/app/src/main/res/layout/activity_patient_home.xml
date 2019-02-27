@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PatientHome">
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,25 +42,94 @@
 
         </android.support.design.widget.TabLayout>
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="top|center"
+            android:src="@mipmap/favicon"/>
 
         <TextView
+            android:id="@+id/patient_greeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:text="Welcome patient!"
+            android:layout_marginBottom="50dp"
             android:textSize="40sp"
             android:textAlignment="center"/>
         
         
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/Patient_Edit_Profile"
-            android:layout_width="wrap_content"
-            android:background="?android:selectableItemBackground"
+        <TextView
+            android:id="@+id/patient_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:src="@drawable/edit_icon"
-            android:layout_margin="@dimen/fab_margin"/>
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
+        <TextView
+            android:id="@+id/patient_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/user_profile_text"
+            android:singleLine = "true"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_entry_separator"/>
+
 
         <Button
             android:id="@+id/logoutButton"
@@ -74,33 +140,37 @@
             android:text="Logout"/>
 
 
-            <LinearLayout
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/Patient_Edit_Profile"
+            android:layout_width="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/edit_icon"
+            android:layout_margin="@dimen/fab_margin"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="fill_parent"
+                android:id="@+id/pager">
 
+            </android.support.v4.view.ViewPager>
 
+        </LinearLayout>
 
-                <android.support.v4.view.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/pager">
-
-                </android.support.v4.view.ViewPager>
-
-
-
-
-
-            </LinearLayout>
-
-
-
-            </LinearLayout>
+    </LinearLayout>
 
 
 
 
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
 
 
 
