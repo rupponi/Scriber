@@ -42,4 +42,7 @@
     <string name="address_zip_prompt">ZIP Code</string>
     <string name="new_pass_prompt">New Password</string>
     <string name="confirm_pass_prompt">Confirm Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

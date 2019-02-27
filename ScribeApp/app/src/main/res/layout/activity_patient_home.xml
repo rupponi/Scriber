@@ -4,13 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PatientHome">
+
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select File"
+                android:textSize="30dp"
+                android:textColor="@color/white"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tablayout"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            >
+
+
+        </android.support.design.widget.TabLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -19,6 +53,8 @@
             android:text="Welcome patient!"
             android:textSize="40sp"
             android:textAlignment="center"/>
+        
+        
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/Patient_Edit_Profile"
@@ -29,7 +65,38 @@
             android:src="@drawable/edit_icon"
             android:layout_margin="@dimen/fab_margin"/>
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:layout_gravity="center"
+            android:text="Logout"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <android.support.v4.view.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/pager">
+
+                </android.support.v4.view.ViewPager>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+
 
 
 
