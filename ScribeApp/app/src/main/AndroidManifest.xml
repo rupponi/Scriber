@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ForgotPassword"></activity>
-        <activity android:name=".AccountSelection" />
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login_page"
@@ -26,29 +25,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DoctorRegistration"
-            android:label="@string/doctor_register_screen_title" />
-        <activity
             android:name=".PatientRegistration"
             android:label="@string/patient_register_screen_title" />
-        <activity
-            android:name=".PatientForgotPassword"
-            android:label="@string/account_recovery_screen_title" />
-        <activity
-            android:name=".DoctorForgotPassword"
-            android:label="@string/account_recovery_screen_title" />
-        <activity
-            android:name=".DoctorHome"
-            android:label="@string/title_activity_doctor_home"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PatientHome" />
         <activity
             android:name=".PatientProfile"
             android:label="@string/title_activity_patient_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DoctorProfile"
-            android:label="DoctorProfile"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

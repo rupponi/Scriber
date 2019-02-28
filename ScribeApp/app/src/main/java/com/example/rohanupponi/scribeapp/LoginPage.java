@@ -79,31 +79,17 @@ public class LoginPage extends AppCompatActivity {
                                             startActivity(loginPatient);
                                         }
                                         else {
-                                            db.collection("doctors").document(user_creds[0]).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                    if (task.isSuccessful()) {
-                                                        DocumentSnapshot doctorDoc = task.getResult();
-                                                        if (doctorDoc.exists()) {
-                                                            Intent loginDoctor = new Intent(getApplicationContext(), DoctorHome.class);
-                                                            loginDoctor.putExtra("doctor_creds", user_creds);
-                                                            startActivity(loginDoctor);
-                                                        }
-                                                        else {
-                                                            Toast noData = Toast.makeText(getApplicationContext(), "Couldn't find user!", Toast.LENGTH_LONG);
-                                                            noData.show();
-                                                        }
-                                                    }
-                                                }
-                                            });
+                                            Log.d(LoginPage.TAG, "Couldn't find user in database");
+                                            Toast failure = Toast.makeText(getApplicationContext(), "Failure to find data!", Toast.LENGTH_LONG);
+                                            failure.show();
                                         }
                                     }
                                 }
                             });
                         }
                         else {
+                            Toast failure = Toast.makeText(getApplicationContext(), "Failure to login!", Toast.LENGTH_LONG);
                             Log.d(LoginPage.TAG, "Credentials invalid.");
-                            Toast failure = Toast.makeText(getApplicationContext(), "Failure!", Toast.LENGTH_LONG);
                             failure.show();
                         }
                         return;
@@ -126,7 +112,7 @@ public class LoginPage extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerUser = new Intent(getApplicationContext(), AccountSelection.class);
+                Intent registerUser = new Intent(getApplicationContext(), PatientRegistration.class);
                 startActivity(registerUser);
             }
         });
