@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".PatientHome"></activity>
+        <activity android:name=".ForgotPassword" />
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login_page"
@@ -27,7 +28,6 @@
         <activity
             android:name=".PatientRegistration"
             android:label="@string/patient_register_screen_title" />
-        <activity android:name=".PatientHome" />
         <activity
             android:name=".PatientProfile"
             android:label="@string/title_activity_patient_profile"
