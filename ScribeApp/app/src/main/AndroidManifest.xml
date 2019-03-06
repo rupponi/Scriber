@@ -28,7 +28,7 @@
             android:name=".PatientRegistration"
             android:label="@string/patient_register_screen_title" />
         <activity
-            android:name=".PatientProfile"
+            android:name=".EditPatient"
             android:label="@string/title_activity_patient_profile"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

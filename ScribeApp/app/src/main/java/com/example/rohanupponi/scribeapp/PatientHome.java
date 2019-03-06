@@ -9,15 +9,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Map;
 
 public class PatientHome extends AppCompatActivity {
 
@@ -38,7 +35,7 @@ public class PatientHome extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     patientData = task.getResult();
 
-                    ViewPager viewPager = findViewById(R.id.view_pager);
+                    ViewPager viewPager = findViewById(R.id.main_view_pager);
                     viewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
 
                     TabLayout profileTabs = findViewById(R.id.profile_tabs);
@@ -60,7 +57,7 @@ public class PatientHome extends AppCompatActivity {
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent editProfile = new Intent(getApplicationContext(), PatientProfile.class);
+                Intent editProfile = new Intent(getApplicationContext(), EditPatient.class);
                 startActivity(editProfile);
             }
         });

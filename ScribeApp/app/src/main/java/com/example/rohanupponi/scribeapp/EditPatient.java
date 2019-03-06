@@ -2,15 +2,17 @@ package com.example.rohanupponi.scribeapp;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class PatientProfile extends AppCompatActivity {
+public class EditPatient extends AppCompatActivity {
 
 
     Button Save;
@@ -25,9 +27,19 @@ public class PatientProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_profile);
+        setContentView(R.layout.activity_edit_patient);
 
-        Save=findViewById(R.id.SaveButton);
+        ViewPager viewPager = findViewById(R.id.edit_view_pager);
+        viewPager.setAdapter(new EditViewPagerAdapter(getSupportFragmentManager()));
+
+        TabLayout editTabs = findViewById(R.id.edit_tabs);
+        editTabs.setTabTextColors(ContextCompat.getColor(getApplicationContext(), R.color.unselectedTab), ContextCompat.getColor(getApplicationContext(), R.color.selectedTab));
+
+        editTabs.setupWithViewPager(viewPager);
+
+        /*
+
+        Save=findViewById(R.id.save_changes_button);
         Name= findViewById(R.id.NameInput);
         Date= findViewById(R.id.AgeInput);
         Phone= findViewById(R.id.ContactInput);
@@ -55,7 +67,7 @@ public class PatientProfile extends AppCompatActivity {
 
 
 
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(PatientProfile.this);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
                 SharedPreferences.Editor editor = prefs.edit();
 
 
@@ -71,6 +83,7 @@ public class PatientProfile extends AppCompatActivity {
             }
         });
 
+        */
 
     }
 }
