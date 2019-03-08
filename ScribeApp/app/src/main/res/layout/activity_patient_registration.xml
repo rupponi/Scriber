@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".PatientRegistration">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -141,5 +145,7 @@
             android:layout_height="10sp"/>
 
     </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

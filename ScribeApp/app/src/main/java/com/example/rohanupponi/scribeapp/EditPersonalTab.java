@@ -10,14 +10,17 @@ import android.widget.EditText;
 
 import javax.annotation.Nullable;
 
+
 public class EditPersonalTab extends Fragment {
     @Nullable
 
-    EditText Name, Email, City, StreetAddress, State, Zip;
-    
+    EditText Name, Email, City, StreetAddress, State, Zip, Phone;
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View fragView = inflater.inflate(R.layout.fragment_edit_personal_tab, container, false);
+
 
         Name = fragView.findViewById(R.id.NameInput);
         Name.setText(PatientHome.patientData.get("name").toString());
@@ -37,11 +40,14 @@ public class EditPersonalTab extends Fragment {
         Zip = fragView.findViewById(R.id.ZipInput);
         Zip.setText(PatientHome.patientData.get("zip-code").toString());
 
-
+        Phone = fragView.findViewById(R.id.ContactInput);
 
 
 
 
         return fragView;
+
+
+
     }
 }

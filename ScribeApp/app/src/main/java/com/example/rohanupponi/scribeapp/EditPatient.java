@@ -35,16 +35,22 @@ public class EditPatient extends AppCompatActivity {
 
 
 
+
+
+
+
         Save=findViewById(R.id.save_changes_button);
 
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
                 EditText Name = findViewById(R.id.NameInput);
                 EditText Email = findViewById(R.id.EmailInput);
                 EditText Date = findViewById(R.id.AgeInput);
                 EditText Phone = findViewById(R.id.ContactInput);
+
 
                String Na = Name.getText().toString().trim();
                String Da = (Date.getText().toString().trim());
@@ -54,15 +60,17 @@ public class EditPatient extends AppCompatActivity {
 
 
 
+
                 prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
                 SharedPreferences.Editor editor = prefs.edit();
 
 
-                editor.putString("Na",Na);
-                editor.putString("Da",Da);
-                editor.putString("Ph",Ph);
-                editor.putString("Em", Em);
-                editor.apply();
+               editor.putString("Na",Na);
+               editor.putString("Da",Da);
+               editor.putString("Ph",Ph);
+               editor.putString("Em", Em);
+
+               editor.apply();
 
 
                 Toast successfulSave = Toast.makeText(getApplicationContext(), "Your profile was successfully saved!", Toast.LENGTH_LONG);

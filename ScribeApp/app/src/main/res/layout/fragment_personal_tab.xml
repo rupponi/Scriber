@@ -13,36 +13,45 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tab_button_separator"/>
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="top|center"
-                android:src="@mipmap/favicon"/>
-            
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tab_button_separator"/>
-            
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2sp"
-                android:background="@color/colorPrimary"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"/>
-            
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tab_button_separator"/>
+                android:layout_marginBottom="40dp"
+                android:src="@mipmap/favicon" />
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="20sp">
+                android:layout_marginLeft="20sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="General Section"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
 
                 <TextView
                     android:id="@+id/patient_name"
@@ -50,11 +59,23 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_entry_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/GenderInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
 
                 <TextView
                     android:id="@+id/patient_email"
@@ -62,11 +83,24 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_entry_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/AgeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
 
                 <TextView
                     android:id="@+id/patient_street_address"
@@ -74,11 +108,11 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_entry_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
 
                 <TextView
                     android:id="@+id/patient_city"
@@ -86,11 +120,11 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_entry_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
 
                 <TextView
                     android:id="@+id/patient_state"
@@ -98,11 +132,11 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_entry_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
 
                 <TextView
                     android:id="@+id/patient_zip"
@@ -110,11 +144,234 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:textSize="@dimen/user_profile_text"/>
+                    android:textSize="@dimen/user_profile_text" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_button_separator"/>
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/MaritalInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/EthnicityInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/ContactInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Insurance Section"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
+
+                <TextView
+                    android:id="@+id/PrimaryInsuranceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/PrimaryPolicyInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/PrimaryGroupInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/SecondaryInsuranceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/SecondaryPolicyInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/SecondaryGroupInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Employer Section"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_button_separator" />
+
+                <TextView
+                    android:id="@+id/EmployerInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/EmployerStreetInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/EmployerCityInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/EmployerStateInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+                <TextView
+                    android:id="@+id/EmployerZipInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="60dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textSize="@dimen/user_profile_text" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_entry_separator" />
+
+
+
+
 
             </LinearLayout>
 
