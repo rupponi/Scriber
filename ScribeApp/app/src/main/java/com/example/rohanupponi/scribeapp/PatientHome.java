@@ -56,6 +56,13 @@ public class PatientHome extends AppCompatActivity {
             }
         });
 
+
+        //********************* INSERT SHARED PREFERENCES HERE **********************************************************//
+
+
+
+        //***END******END******END******END******END******END******END******END******END******END******END******END***//
+
         editProfileButton = findViewById(R.id.edit_profile_button);
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override

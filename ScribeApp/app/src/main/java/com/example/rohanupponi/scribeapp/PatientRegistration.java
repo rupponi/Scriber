@@ -94,10 +94,10 @@ public class PatientRegistration extends AppCompatActivity {
                 newPatient.put("state", state);
                 newPatient.put("zip-code", Integer.parseInt(sZip));
 
-                newPatient.put("primary-phone", "-2" );
-                newPatient.put("gender", "M/F");
-                newPatient.put("date-of-birth", "-5");
-                newPatient.put("marital-status","single/married/divorced");
+                newPatient.put("primary-phone", "000-000-0000" );
+                newPatient.put("gender", "None");
+                newPatient.put("date-of-birth", "01/01/0000");
+                newPatient.put("marital-status","None");
                 newPatient.put("ethnicity", "None");
                 newPatient.put("primary-insurance","None");
                 newPatient.put("primary-policy","0");
@@ -108,7 +108,7 @@ public class PatientRegistration extends AppCompatActivity {
                 newPatient.put("employer", "None");
                 newPatient.put("employer-street", "None");
                 newPatient.put("employer-city", "None");
-                newPatient.put("employer-state","none");
+                newPatient.put("employer-state","None");
                 newPatient.put("employer-zip","00000");
 
 
