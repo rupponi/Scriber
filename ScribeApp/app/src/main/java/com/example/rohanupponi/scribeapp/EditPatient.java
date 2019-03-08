@@ -11,18 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditPatient extends AppCompatActivity {
 
 
     Button Save;
-
-    EditText Name, Date, Phone;
-
-    String Na;
-    int Da;
-    int Ph;
-
+    static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,49 +27,46 @@ public class EditPatient extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.edit_view_pager);
         viewPager.setAdapter(new EditViewPagerAdapter(getSupportFragmentManager()));
 
+
         TabLayout editTabs = findViewById(R.id.edit_tabs);
         editTabs.setTabTextColors(ContextCompat.getColor(getApplicationContext(), R.color.unselectedTab), ContextCompat.getColor(getApplicationContext(), R.color.selectedTab));
 
         editTabs.setupWithViewPager(viewPager);
 
-        /*
+
 
         Save=findViewById(R.id.save_changes_button);
-        Name= findViewById(R.id.NameInput);
-        Date= findViewById(R.id.AgeInput);
-        Phone= findViewById(R.id.ContactInput);
-
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-        String Na1 = prefs.getString("Na", "");
-        Name.setText((Na1), TextView.BufferType.EDITABLE);
-
-        int Da1= prefs.getInt("Da",0);
-        Date.setText(Integer.toString(Da1), TextView.BufferType.EDITABLE);
-
-        int Ph1= prefs.getInt("Ph", 0);
-        Phone.setText(Integer.toString(Ph1));
-
-
 
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Na = Name.getText().toString().trim();
-                Da = Integer.parseInt(Date.getText().toString().trim());
-                Ph = Integer.parseInt(Phone.getText().toString().trim());
+                EditText Name = findViewById(R.id.NameInput);
+                EditText Email = findViewById(R.id.EmailInput);
+                EditText Date = findViewById(R.id.AgeInput);
+                EditText Phone = findViewById(R.id.ContactInput);
+
+               String Na = Name.getText().toString().trim();
+               String Da = (Date.getText().toString().trim());
+               String Ph = (Phone.getText().toString().trim());
+               String Em = Email.getText().toString().trim();
 
 
 
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
+
+                prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
                 SharedPreferences.Editor editor = prefs.edit();
 
 
                 editor.putString("Na",Na);
-                editor.putInt("Da",Da);
-                editor.putInt("Ph",Ph);
+                editor.putString("Da",Da);
+                editor.putString("Ph",Ph);
+                editor.putString("Em", Em);
                 editor.apply();
+
+
+                Toast successfulSave = Toast.makeText(getApplicationContext(), "Your profile was successfully saved!", Toast.LENGTH_LONG);
+                successfulSave.show();
 
 
 
@@ -83,7 +75,7 @@ public class EditPatient extends AppCompatActivity {
             }
         });
 
-        */
+
 
     }
 }

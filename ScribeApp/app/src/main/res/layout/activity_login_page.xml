@@ -34,67 +34,67 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="80dp"
-                android:src = "@mipmap/favicon"/>
+                android:src="@mipmap/favicon" />
 
             <EditText
                 android:id="@+id/login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginBottom="40dp"
                 android:hint="email"
-                android:singleLine = "true"
                 android:imeOptions="actionNext"
-                android:layout_marginBottom="40dp"/>
+                android:singleLine="true"
+                android:textSize="@dimen/user_entry_field_text" />
 
 
             <EditText
                 android:id="@+id/login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginBottom="60dp"
                 android:hint="password"
-                android:inputType="textPassword"
-                android:singleLine = "true"
                 android:imeOptions="actionNext"
-                android:layout_marginBottom="60dp"/>
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="@dimen/user_entry_field_text" />
 
             <Button
                 android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/rounded_button_layout"
                 android:text="@string/login_label"
                 android:textColor="@color/white"
-                android:textSize="@dimen/full_size_button_text"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="@dimen/full_size_button_text" />
 
             <TextView
                 android:id="@+id/forgot_password_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/forgot_pass_prompt"
-                android:textColor="@color/colorAccent"
                 android:clickable="true"
-                android:textSize="@dimen/full_size_button_text"/>
+                android:text="@string/forgot_pass_prompt"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/full_size_button_text" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1sp"
-                android:background="@color/colorAccent"
                 android:layout_marginTop="30sp"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:background="@color/colorAccent" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:text="@string/no_account_prompt"
+                android:textAlignment="center"
                 android:textColor="@color/colorAccent"
-                android:textSize="@dimen/user_entry_field_text"/>
+                android:textSize="@dimen/user_entry_field_text" />
 
             <Button
-                android:id = "@+id/sign_up_button"
+                android:id="@+id/sign_up_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button_layout_inverted"

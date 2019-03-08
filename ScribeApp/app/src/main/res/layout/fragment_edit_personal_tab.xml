@@ -29,6 +29,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Enter email"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EmailInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="JohnDoe@gmail.com"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Enter Date of Birth"
                 android:layout_marginTop="20dp"/>
 
