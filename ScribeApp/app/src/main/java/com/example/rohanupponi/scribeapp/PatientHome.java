@@ -9,16 +9,19 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PatientHome extends AppCompatActivity {
 
     static DocumentSnapshot patientData;
+    private Button logoutButton;
     private FloatingActionButton editProfileButton;
 
     @Override
@@ -59,6 +62,16 @@ public class PatientHome extends AppCompatActivity {
             public void onClick(View v) {
                 Intent editProfile = new Intent(getApplicationContext(), EditPatient.class);
                 startActivity(editProfile);
+            }
+        });
+
+        logoutButton = findViewById(R.id.logout_button);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent logoutPatient = new Intent(getApplicationContext(), LoginPage.class);
+                startActivity(logoutPatient);
             }
         });
 
