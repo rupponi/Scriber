@@ -16,12 +16,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Name"
+                android:text="Full Name"
                 android:layout_marginTop="20dp"/>
 
             <EditText
 
-                android:id="@+id/NameInput"
+                android:id="@+id/ENameInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="First and Last Name"
@@ -31,13 +31,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter email"
+                android:text="Gender"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EGenderInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="M/F"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="20dp"/>
 
             <EditText
 
-                android:id="@+id/EmailInput"
+                android:id="@+id/EEmailInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="JohnDoe@gmail.com"
@@ -47,11 +62,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Date of Birth"
+                android:text="Date of Birth"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/AgeInput"
+                android:id="@+id/EAgeInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="##/##/####"
@@ -62,26 +77,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Primary Phone #"
+                android:text="Street Address"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/ContactInput"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:hint="###-###-####"
-                android:inputType="number"
-                android:layout_marginTop="20dp"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Enter Street Address"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/StreetInput"
+                android:id="@+id/EStreetInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
@@ -94,7 +94,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/CityInput"
+                android:id="@+id/ECityInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -107,7 +107,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/StateInput"
+                android:id="@+id/EStateInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -120,7 +120,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/ZipInput"
+                android:id="@+id/EZipInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="#####"
@@ -130,15 +130,88 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Martial Status"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EMaritalInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Single/Married/Divorced"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ethnicity"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EEthnicityInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Phone #"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EPhoneInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="###-###-####"
+                android:inputType="number"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Primary Insurance"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/InsuranceInput"
+                android:id="@+id/EPrimaryInsuranceInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Insurance Policy #"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EPrimaryPolicyInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Insurance Group Number"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EPrimaryGroupInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -147,26 +220,109 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/SecondaryInsuranceInput"
+                android:id="@+id/ESecondaryInsuranceInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginTop="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Employer"
+                android:text="Secondary Insurance Policy #"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/EmployerInput"
+
+                android:id="@+id/ESecondaryPolicyInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secondary Insurance Group Number"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/ESecondaryGroupInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employer Organization"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EEmployerInput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employer Street Address"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EEmployerStreetInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employer City"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EEmployerCityInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employer State"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EEmployerStateInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employer Zip"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EEmployerZipInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="80dp"/>
 
         </LinearLayout>
 
