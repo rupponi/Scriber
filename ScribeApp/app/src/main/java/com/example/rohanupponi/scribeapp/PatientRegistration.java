@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,11 +20,19 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static java.util.Arrays.asList;
 
 public class PatientRegistration extends AppCompatActivity {
     public static final String TAG = "PatientRegistration";
+
+    private EditText nameField, emailField, addressField, cityField, zipField,
+                     passwordField, passwordConfirmField;
+    private Spinner stateDropDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,49 +41,98 @@ public class PatientRegistration extends AppCompatActivity {
 
         Button patientRegisterButton = (Button) findViewById(R.id.new_patient_button);
 
+//====== SET UP DROPDOWN FOR STATE CHOICES ===========================================================================//
+        stateDropDown = findViewById(R.id.new_patient_state_spinner);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(PatientRegistration.this,
+                R.array.states_array,
+                R.layout.dropdown_layout
+        );
+        adapter.setDropDownViewResource(R.layout.dropdown_layout);
+        stateDropDown.setAdapter(adapter);
+
         patientRegisterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                EditText nameField = (EditText) findViewById(R.id.new_patient_name_field);
-                EditText emailField = (EditText) findViewById(R.id.new_patient_email_field);
+//============== SET EDIT FIELDS TO VIEWS TO COLLECT DATA ============================================================//
+                nameField = findViewById(R.id.new_patient_name_field);
+                emailField = findViewById(R.id.new_patient_email_field);
 
-                EditText addressField = findViewById(R.id.new_patient_address_field);
-                EditText cityField = findViewById(R.id.new_patient_city_field);
-                EditText stateField = findViewById(R.id.new_patient_state_field);
-                EditText zipField = findViewById(R.id.new_patient_zip_field);
+                addressField = findViewById(R.id.new_patient_address_field);
+                cityField = findViewById(R.id.new_patient_city_field);
+                zipField = findViewById(R.id.new_patient_zip_field);
 
-                EditText passwordField = (EditText) findViewById(R.id.new_patient_password);
-                EditText passwordConfirmField = (EditText) findViewById(R.id.new_patient_password_confirm);
+                passwordField = findViewById(R.id.new_patient_password);
+                passwordConfirmField = findViewById(R.id.new_patient_password_confirm);
+//====================================================================================================================//
 
-
+//============== COLLECT DATA FROM TEXT FIELDS =======================================================================//
                 String name = nameField.getText().toString().trim();
                 String email = emailField.getText().toString().trim();
 
 
                 String address = addressField.getText().toString().trim();
                 String city = cityField.getText().toString().trim();
-                String state = stateField.getText().toString().trim();
+                List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
+                State state = Utils.getState(stateChoices.indexOf(stateDropDown.getSelectedItem().toString()));
 
                 String sZip = zipField.getText().toString().trim();
 
                 String password = passwordField.getText().toString().trim();
                 String passwordConfirm = passwordConfirmField.getText().toString().trim();
+//====================================================================================================================//
 
-
-
-                if (name.matches("") || email.matches("") || address.matches("") || city.matches("") || state.matches("") || sZip.matches("") || password.matches("") || passwordConfirm.matches("")) {
-                    Toast incompleteInfo = Toast.makeText(getApplicationContext(), "Information incomplete!", Toast.LENGTH_LONG);
+//============== IF A FIELD IS EMPTY, YOU SHALL NOT PASS =============================================================//
+                if (name.matches("") ||email.matches("") || address.matches("") || city.matches("") || sZip.matches("") || password.matches("") || passwordConfirm.matches("")) {
+                    Toast incompleteInfo = Toast.makeText(getApplicationContext(),
+                            "Information incomplete!",
+                            Toast.LENGTH_LONG
+                    );
                     incompleteInfo.show();
                     return;
                 }
+//====================================================================================================================//
 
+//============== IF PASSWORD ISN'T CONFIRMED PROPERLY, YOU SHALL NOT PASS ============================================//
                 if (!password.equals(passwordConfirm)) {
-                    Toast test = Toast.makeText(getApplicationContext(), "Error: Passwords don't match. Please make sure to confirm correct password.", Toast.LENGTH_LONG);
+                    Toast test = Toast.makeText(getApplicationContext(),
+                            "Error: Passwords don't match. Please make sure to confirm correct password.",
+                            Toast.LENGTH_LONG
+                    );
                     test.show();
                 }
+//====================================================================================================================//
 
+//============== SET UP DEFAULT VALUES FOR OTHER PATIENT PROFILE ITEMS ===============================================//
+                String[] newPhone = new String[] {"000", "000", "0000"};
+//====================================================================================================================//
+
+//============== GENERATE NEW PATIENT FROM INPUT FIELD DATA ==========================================================//
+                Map<String, Object> newPatient = new HashMap<>();
+                newPatient.put("name", name);
+                newPatient.put("street-address", address);
+                newPatient.put("city", city);
+                newPatient.put("state", state);
+                newPatient.put("zip-code", Integer.parseInt(sZip));
+
+                newPatient.put("primary-phone", "000-000-0000");
+                newPatient.put("gender", Gender.NONE);
+                newPatient.put("date-of-birth", "01/01/0000");
+                newPatient.put("marital-status", MaritalStatus.NONE);
+                newPatient.put("ethnicity", Ethnicity.NONE);
+                newPatient.put("primary-insurance","NONE");
+                newPatient.put("primary-policy","0");
+                newPatient.put("primary-group", "0");
+                newPatient.put("secondary-insurance","NONE");
+                newPatient.put("secondary-policy","0");
+                newPatient.put("secondary-group", "0");
+                newPatient.put("employer", "NONE");
+                newPatient.put("employer-street", "NONE");
+                newPatient.put("employer-city", "NONE");
+                newPatient.put("employer-state", State.NONE);
+                newPatient.put("employer-zip","00000");
+//====================================================================================================================//
+
+//============== REGISTER PATIENT CREDENTIALS ========================================================================//
                 FirebaseAuth patientRegisterAuth = FirebaseAuth.getInstance();
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
                 patientRegisterAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(PatientRegistration.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> register) {
@@ -86,34 +145,10 @@ public class PatientRegistration extends AppCompatActivity {
                         }
                     }
                 });
+//====================================================================================================================//
 
-                Map<String, Object> newPatient = new HashMap<>();
-                newPatient.put("name", name);
-                newPatient.put("street-address", address);
-                newPatient.put("city", city);
-                newPatient.put("state", state);
-                newPatient.put("zip-code", Integer.parseInt(sZip));
-
-                newPatient.put("primary-phone", "000-000-0000" );
-                newPatient.put("gender", "None");
-                newPatient.put("date-of-birth", "01/01/0000");
-                newPatient.put("marital-status","None");
-                newPatient.put("ethnicity", "None");
-                newPatient.put("primary-insurance","None");
-                newPatient.put("primary-policy","0");
-                newPatient.put("primary-group", "0");
-                newPatient.put("secondary-insurance","None");
-                newPatient.put("secondary-policy","0");
-                newPatient.put("secondary-group", "0");
-                newPatient.put("employer", "None");
-                newPatient.put("employer-street", "None");
-                newPatient.put("employer-city", "None");
-                newPatient.put("employer-state","None");
-                newPatient.put("employer-zip","00000");
-
-
-
-
+//============== REGISTER PATIENT DATA IN DATABASE ===================================================================//
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection("patients").document(email).set(newPatient).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -135,6 +170,7 @@ public class PatientRegistration extends AppCompatActivity {
                         startActivity(redirectToPatientLogin);
                     }
                 });
+//====================================================================================================================//
             }
         });
 

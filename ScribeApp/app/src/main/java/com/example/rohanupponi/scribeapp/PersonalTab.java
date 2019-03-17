@@ -63,8 +63,6 @@ public class PersonalTab extends Fragment {
         patientEmployerState.setText("State: \t" + PatientHome.patientData.get("employer-state").toString());
         patientEmployerZip.setText("Zip: \t" + PatientHome.patientData.get("employer-zip").toString());
 
-
-
         return fragView;
     }
 }

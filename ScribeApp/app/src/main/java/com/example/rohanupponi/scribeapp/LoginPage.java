@@ -62,12 +62,14 @@ public class LoginPage extends AppCompatActivity {
                 String password = passwordfield.getText().toString().trim();
 
                 if (email.matches("")) {
+                    progressBar.setVisibility(View.GONE);
                     Toast requestEmail = Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_LONG);
                     requestEmail.show();
                     return;
                 }
 
                 if (password.matches("")) {
+                    progressBar.setVisibility(View.GONE);
                     Toast requestPassword = Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_LONG);
                     requestPassword.show();
                     return;

@@ -10,8 +10,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +56,15 @@ public class EditPatient extends AppCompatActivity {
                 EditText Phone = findViewById(R.id.EPhoneInput);
 
                 EditText Gender = findViewById(R.id.EGenderInput);
+                /*
+                ArrayAdapter genderAdapter = ArrayAdapter.createFromResource(EditPatient.this,
+                        R.array.gender_array,
+                        R.layout.dropdown_layout
+                );
+                genderAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+                Gender.setAdapter(genderAdapter);
+                */
+
                 EditText Street = findViewById(R.id.EStreetInput);
                 EditText City = findViewById(R.id.ECityInput);
                 EditText State = findViewById(R.id.EStateInput);
@@ -73,16 +84,12 @@ public class EditPatient extends AppCompatActivity {
                 EditText EmployerZip = findViewById(R.id.EEmployerZipInput);
 
 
+                String sName = Name.getText().toString().trim();
+                String sDate = (Date.getText().toString().trim());
+                String sPhone = (Phone.getText().toString().trim());
+                String sEmployer = Email.getText().toString().trim();
 
-
-
-
-                String Na = Name.getText().toString().trim();
-                String Da = (Date.getText().toString().trim());
-                String Ph = (Phone.getText().toString().trim());
-                String Em = Email.getText().toString().trim();
-
-                String Ge = Gender.getText().toString().trim();
+                String sGender = Gender.getText().toString().trim();
                 String St = Street.getText().toString().trim();
                 String Ci = City.getText().toString().trim();
                 String Sta= State.getText().toString().trim();
@@ -106,12 +113,12 @@ public class EditPatient extends AppCompatActivity {
                 SharedPreferences.Editor editor = prefs.edit();
 
 
-                editor.putString("Na",Na);
-                editor.putString("Da",Da);
-                editor.putString("Ph",Ph);
-                editor.putString("Em", Em);
+                editor.putString("Na",sName);
+                editor.putString("Da",sDate);
+                editor.putString("Ph",sPhone);
+                editor.putString("Em", sEmployer);
 
-                editor.putString("Ge", Ge);
+                editor.putString("Ge", sGender);
                 editor.putString("St", St);
                 editor.putString("Ci", Ci);
                 editor.putString("Sta", Sta);
@@ -139,15 +146,15 @@ public class EditPatient extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
-                db.collection("patients").document(Em).update(
-                        "name", Na,
+                db.collection("patients").document(sEmployer).update(
+                        "name", sName,
                         "street-address", St,
                         "city", Ci,
                         "state", Sta,
-                        "gender", Ge,
-                        "email", Em,
-                        "date-of-birth", Da,
-                        "primary-phone", Ph,
+                        "gender", sGender,
+                        "email", sEmployer,
+                        "date-of-birth", sDate,
+                        "primary-phone", sPhone,
                         "zip-code", Zi,
                         "ethnicity", Eth,
                         "marital-status", Mar,
