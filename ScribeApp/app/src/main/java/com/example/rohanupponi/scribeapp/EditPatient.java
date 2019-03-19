@@ -84,6 +84,25 @@ public class EditPatient extends AppCompatActivity {
                 EditText EmployerZip = findViewById(R.id.EEmployerZipInput);
 
 
+
+                EditText PrimaryEmergency = findViewById(R.id.EPrimaryEmergencyInput);
+                EditText PrimaryEmergencyContact = findViewById(R.id.EPrimaryEContactInput);
+                EditText SecondaryEmergency = findViewById(R.id.ESecondaryEmergencyInput);
+                EditText SecondaryEmergencyContact = findViewById(R.id.ESecondaryEContactInput);
+
+                EditText Bloodtype = findViewById(R.id.EBloodtypeInput);
+                EditText Prescription = findViewById(R.id.EPrescriptionInput);
+                EditText Vaccination = findViewById(R.id.EVaccinationInput);
+                EditText Lifestyle = findViewById(R.id.ELifestyleInput);
+
+                EditText Allergies = findViewById(R.id.EAllergiesInput);
+                EditText FamilyHistory = findViewById(R.id.EFamilyHistoryInput);
+                EditText SurgicalHistory = findViewById(R.id.ESurgicalHistoryInput);
+                EditText Conditions = findViewById(R.id.EConditionsInput);
+
+
+
+
                 String sName = Name.getText().toString().trim();
                 String sDate = (Date.getText().toString().trim());
                 String sPhone = (Phone.getText().toString().trim());
@@ -107,6 +126,24 @@ public class EditPatient extends AppCompatActivity {
                 String EmplCity = EmployerCity.getText().toString().trim();
                 String EmplState = EmployerState.getText().toString().trim();
                 String EmplZip = EmployerZip.getText().toString().trim();
+
+
+
+                String PrimEmer = PrimaryEmergency.getText().toString().trim();
+                String PrimEmerContact = PrimaryEmergencyContact.getText().toString().trim();
+                String SecEmer = SecondaryEmergency.getText().toString().trim();
+                String SecEmerContact = SecondaryEmergencyContact.getText().toString().trim();
+
+                String Bltype = Bloodtype.getText().toString().trim();
+                String Presc = Prescription.getText().toString().trim();
+                String Vacc = Vaccination.getText().toString().trim();
+                String life = Lifestyle.getText().toString().trim();
+
+                String allergies = Allergies.getText().toString().trim();
+                String famhistory = FamilyHistory.getText().toString().trim();
+                String surghistory = SurgicalHistory.getText().toString().trim();
+                String conditions = Conditions.getText().toString().trim();
+
 
 
                 prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
@@ -136,6 +173,20 @@ public class EditPatient extends AppCompatActivity {
                 editor.putString("EmplCity", EmplCity);
                 editor.putString("EmplState", EmplState);
                 editor.putString("EmplZip", EmplZip);
+
+                editor.putString("PrimEmer", PrimEmer);
+                editor.putString("PrimEmerContact", PrimEmerContact);
+                editor.putString("SecEmer", SecEmer);
+                editor.putString("SecEmerContact", SecEmerContact);
+                editor.putString("Bltype", Bltype);
+                editor.putString("Presc", Presc);
+                editor.putString("Vacc", Vacc);
+                editor.putString("life", life);
+                editor.putString("allergies", allergies);
+                editor.putString("famhistory", famhistory);
+                editor.putString("surghistory", surghistory);
+                editor.putString("conditions", conditions);
+
 
 
                 editor.apply();
@@ -168,7 +219,20 @@ public class EditPatient extends AppCompatActivity {
                         "employer-street", EmplStreet,
                         "employer-city", EmplCity,
                         "employer-state", EmplState,
-                        "employer-zip", EmplZip
+                        "employer-zip", EmplZip,
+
+                        "primary-em-contact", PrimEmer,
+                        "primary-em-phone", PrimEmerContact,
+                        "secondary-em-contact", SecEmer,
+                        "secondary-em-phone", SecEmerContact,
+                        "blood-type", Bltype,
+                        "prescription-dosage", Presc,
+                        "vaccinations", Vacc,
+                        "lifestyle", life,
+                        "allergies", allergies,
+                        "family-history", famhistory,
+                        "surgical-history", surghistory,
+                        "conditions", conditions
 
 
                 ).addOnSuccessListener(new OnSuccessListener<Void>() {

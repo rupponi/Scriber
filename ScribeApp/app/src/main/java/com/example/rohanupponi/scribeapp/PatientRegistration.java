@@ -129,6 +129,22 @@ public class PatientRegistration extends AppCompatActivity {
                 newPatient.put("employer-city", "NONE");
                 newPatient.put("employer-state", State.NONE);
                 newPatient.put("employer-zip","00000");
+
+                newPatient.put("primary-em-contact", "NONE");
+                newPatient.put("primary-em-phone", "NONE");
+                newPatient.put("secondary-em-contact", "NONE");
+                newPatient.put("secondary-em-phone","NONE");
+                newPatient.put("blood-type", "NONE");
+                newPatient.put("prescription-dosage", "NONE");
+                newPatient.put("vaccinations", "NONE");
+                newPatient.put("lifestyle", "NONE");
+                newPatient.put("allergies", "NONE");
+                newPatient.put("family-history", "NONE");
+                newPatient.put("surgical-history", "NONE");
+                newPatient.put("conditions", "NONE");
+
+
+
 //====================================================================================================================//
 
 //============== REGISTER PATIENT CREDENTIALS ========================================================================//

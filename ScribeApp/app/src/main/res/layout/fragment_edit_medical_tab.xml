@@ -1,20 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Medical"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20sp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Emergency Contact"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EPrimaryEmergencyInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="First and Last Name"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primary Emergency Phone"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EPrimaryEContactInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secondary Emergency Contact"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/ESecondaryEmergencyInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="First and Last Name"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secondary Emergency Phone"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/ESecondaryEContactInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood Type"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EBloodtypeInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prescriptions/Dosages"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EPrescriptionInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaccinations"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EVaccinationInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lifestyle"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/ELifestyleInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Alcohol/Cigarette Usage"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allergies"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EAllergiesInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Medications/Products/Environment"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Family Medical History"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+
+                android:id="@+id/EFamilyHistoryInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surgical History"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/ESurgicalHistoryInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conditions"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/EConditionsInput"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="80dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
