@@ -1,8 +1,6 @@
 package com.example.rohanupponi.scribeapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -14,21 +12,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class EditPatient extends AppCompatActivity {
 
+    private Button SaveButton;
+    private EditText editName, editEmail, editBirthDate, editPhone, editStreet, editCity, editZip,
+                     editPrimaryInsurance, editPrimaryInsurancePolicy, editPrimaryInsuranceGroup,
+                     editSecondaryInsurance, editSecondaryInsurancePolicy, editSecondaryInsuranceGroup,
+                     editEmployer, editEmployerStreet, editEmployerCity, editEmployerZip,
+                     editPrimaryEmergencyContact, editPrimaryEmergencyContactNumber,
+                     editSecondaryEmergencyContact, editSecondaryEmergencyContactNumber;
 
-    Button Save;
-    static SharedPreferences prefs;
+    private Spinner editState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +43,20 @@ public class EditPatient extends AppCompatActivity {
         editTabs.setTabTextColors(ContextCompat.getColor(getApplicationContext(), R.color.unselectedTab), ContextCompat.getColor(getApplicationContext(), R.color.selectedTab));
         editTabs.setupWithViewPager(viewPager);
 
-        Save=findViewById(R.id.save_changes_button);
+        SaveButton = findViewById(R.id.save_changes_button);
 
-        Save.setOnClickListener(new View.OnClickListener() {
+
+
+
+        SaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                EditText Name = findViewById(R.id.ENameInput);
-                EditText Email = findViewById(R.id.EEmailInput);
-                EditText Date = findViewById(R.id.EAgeInput);
-                EditText Phone = findViewById(R.id.EPhoneInput);
+                editName = findViewById(R.id.ENameInput);
+                editEmail = findViewById(R.id.EEmailInput);
+                editBirthDate = findViewById(R.id.EAgeInput);
+                editPhone = findViewById(R.id.EPhoneInput);
 
                 EditText Gender = findViewById(R.id.EGenderInput);
                 /*
@@ -65,30 +68,30 @@ public class EditPatient extends AppCompatActivity {
                 Gender.setAdapter(genderAdapter);
                 */
 
-                EditText Street = findViewById(R.id.EStreetInput);
-                EditText City = findViewById(R.id.ECityInput);
-                EditText State = findViewById(R.id.EStateInput);
-                EditText Zip = findViewById(R.id.EZipInput);
+                editStreet = findViewById(R.id.EStreetInput);
+                editCity = findViewById(R.id.ECityInput);
+                EditText State = findViewById(R.id.EditStateInput);
+                editZip = findViewById(R.id.EZipInput);
                 EditText Ethnicity = findViewById(R.id.EEthnicityInput);
                 EditText Marital = findViewById(R.id.EMaritalInput);
-                EditText PInsurance = findViewById(R.id.EPrimaryInsuranceInput);
-                EditText PInsurancePolicy = findViewById(R.id.EPrimaryPolicyInput);
-                EditText PInsuranceGroup = findViewById(R.id.EPrimaryGroupInput);
-                EditText SInsurance = findViewById(R.id.ESecondaryInsuranceInput);
-                EditText SInsurancePolicy = findViewById(R.id.ESecondaryPolicyInput);
-                EditText SInsuranceGroup = findViewById(R.id.ESecondaryGroupInput);
-                EditText Employer = findViewById(R.id.EEmployerInput);
-                EditText EmployerStreet = findViewById(R.id.EEmployerStreetInput);
-                EditText EmployerCity = findViewById(R.id.EEmployerCityInput);
+                editPrimaryInsurance = findViewById(R.id.EPrimaryInsuranceInput);
+                editPrimaryInsurancePolicy = findViewById(R.id.EPrimaryPolicyInput);
+                editPrimaryInsuranceGroup = findViewById(R.id.EPrimaryGroupInput);
+                editSecondaryInsurance = findViewById(R.id.ESecondaryInsuranceInput);
+                editSecondaryInsurancePolicy = findViewById(R.id.ESecondaryPolicyInput);
+                editSecondaryInsuranceGroup = findViewById(R.id.ESecondaryGroupInput);
+                editEmployer = findViewById(R.id.EEmployerInput);
+                editEmployerStreet = findViewById(R.id.EEmployerStreetInput);
+                editEmployerCity = findViewById(R.id.EEmployerCityInput);
                 EditText EmployerState = findViewById(R.id.EEmployerStateInput);
-                EditText EmployerZip = findViewById(R.id.EEmployerZipInput);
+                editEmployerZip = findViewById(R.id.EEmployerZipInput);
 
 
 
-                EditText PrimaryEmergency = findViewById(R.id.EPrimaryEmergencyInput);
-                EditText PrimaryEmergencyContact = findViewById(R.id.EPrimaryEContactInput);
-                EditText SecondaryEmergency = findViewById(R.id.ESecondaryEmergencyInput);
-                EditText SecondaryEmergencyContact = findViewById(R.id.ESecondaryEContactInput);
+                editPrimaryEmergencyContact = findViewById(R.id.EPrimaryEmergencyInput);
+                editPrimaryEmergencyContactNumber = findViewById(R.id.EPrimaryEContactInput);
+                editSecondaryEmergencyContact = findViewById(R.id.ESecondaryEmergencyInput);
+                editSecondaryEmergencyContactNumber = findViewById(R.id.ESecondaryEContactInput);
 
                 EditText Bloodtype = findViewById(R.id.EBloodtypeInput);
                 EditText Prescription = findViewById(R.id.EPrescriptionInput);
@@ -100,39 +103,20 @@ public class EditPatient extends AppCompatActivity {
                 EditText SurgicalHistory = findViewById(R.id.ESurgicalHistoryInput);
                 EditText Conditions = findViewById(R.id.EConditionsInput);
 
-
-
-
-                String sName = Name.getText().toString().trim();
-                String sDate = (Date.getText().toString().trim());
-                String sPhone = (Phone.getText().toString().trim());
-                String sEmployer = Email.getText().toString().trim();
+                String sEmployer = editEmail.getText().toString().trim();
 
                 String sGender = Gender.getText().toString().trim();
-                String St = Street.getText().toString().trim();
-                String Ci = City.getText().toString().trim();
                 String Sta= State.getText().toString().trim();
-                String Zi = Zip.getText().toString().trim();
                 String Eth = Ethnicity.getText().toString().trim();
                 String Mar= Marital.getText().toString().trim();
-                String In = PInsurance.getText().toString().trim();
-                String Policy = PInsurancePolicy.getText().toString().trim();
-                String Gr = PInsuranceGroup.getText().toString().trim();
-                String SIn = SInsurance.getText().toString().trim();
-                String SPolicy = SInsurancePolicy.getText().toString().trim();
-                String SGr = SInsuranceGroup.getText().toString().trim();
-                String Empl = Employer.getText().toString().trim();
-                String EmplStreet = EmployerStreet.getText().toString().trim();
-                String EmplCity = EmployerCity.getText().toString().trim();
                 String EmplState = EmployerState.getText().toString().trim();
-                String EmplZip = EmployerZip.getText().toString().trim();
 
 
 
-                String PrimEmer = PrimaryEmergency.getText().toString().trim();
-                String PrimEmerContact = PrimaryEmergencyContact.getText().toString().trim();
-                String SecEmer = SecondaryEmergency.getText().toString().trim();
-                String SecEmerContact = SecondaryEmergencyContact.getText().toString().trim();
+                String PrimEmer = editPrimaryEmergencyContact.getText().toString().trim();
+                String PrimEmerContact = editPrimaryEmergencyContactNumber.getText().toString().trim();
+                String SecEmer = editSecondaryEmergencyContact.getText().toString().trim();
+                String SecEmerContact = editSecondaryEmergencyContactNumber.getText().toString().trim();
 
                 String Bltype = Bloodtype.getText().toString().trim();
                 String Presc = Prescription.getText().toString().trim();
@@ -145,81 +129,32 @@ public class EditPatient extends AppCompatActivity {
                 String conditions = Conditions.getText().toString().trim();
 
 
-
-                prefs = PreferenceManager.getDefaultSharedPreferences(EditPatient.this);
-                SharedPreferences.Editor editor = prefs.edit();
-
-
-                editor.putString("Na",sName);
-                editor.putString("Da",sDate);
-                editor.putString("Ph",sPhone);
-                editor.putString("Em", sEmployer);
-
-                editor.putString("Ge", sGender);
-                editor.putString("St", St);
-                editor.putString("Ci", Ci);
-                editor.putString("Sta", Sta);
-                editor.putString("Zi", Zi);
-                editor.putString("Eth", Eth);
-                editor.putString("Mar", Mar);
-                editor.putString("In", In);
-                editor.putString("Policy", Policy);
-                editor.putString("Gr", Gr);
-                editor.putString("SIn", SIn);
-                editor.putString("SPolicy", SPolicy);
-                editor.putString("SGr", SGr);
-                editor.putString("Empl", Empl);
-                editor.putString("EmplStreet", EmplStreet);
-                editor.putString("EmplCity", EmplCity);
-                editor.putString("EmplState", EmplState);
-                editor.putString("EmplZip", EmplZip);
-
-                editor.putString("PrimEmer", PrimEmer);
-                editor.putString("PrimEmerContact", PrimEmerContact);
-                editor.putString("SecEmer", SecEmer);
-                editor.putString("SecEmerContact", SecEmerContact);
-                editor.putString("Bltype", Bltype);
-                editor.putString("Presc", Presc);
-                editor.putString("Vacc", Vacc);
-                editor.putString("life", life);
-                editor.putString("allergies", allergies);
-                editor.putString("famhistory", famhistory);
-                editor.putString("surghistory", surghistory);
-                editor.putString("conditions", conditions);
-
-
-
-                editor.apply();
-
-
-
                //******************* PUSH TO DATABASE SECTION ********************//
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
                 db.collection("patients").document(sEmployer).update(
-                        "name", sName,
-                        "street-address", St,
-                        "city", Ci,
+                        "name", editName.getText().toString().trim(),
+                        "street-address", editStreet.getText().toString().trim(),
+                        "city", editCity.getText().toString().trim(),
                         "state", Sta,
                         "gender", sGender,
-                        "email", sEmployer,
-                        "date-of-birth", sDate,
-                        "primary-phone", sPhone,
-                        "zip-code", Zi,
+                        "email", editEmployer.getText().toString().trim(),
+                        "date-of-birth", editBirthDate.getText().toString().trim(),
+                        "primary-phone", editPhone.getText().toString().trim(),
+                        "zip-code", editZip.getText().toString().trim(),
                         "ethnicity", Eth,
                         "marital-status", Mar,
-                        "primary-insurance", In,
-                        "primary-policy", Policy,
-                        "primary-group", Gr,
-                        "secondary-insurance", SIn,
-                        "secondary-policy", SPolicy,
-                        "secondary-group", SGr,
-                        "employer", Empl,
-                        "employer-street", EmplStreet,
-                        "employer-city", EmplCity,
+                        "primary-insurance", editPrimaryInsurance.getText().toString().trim(),
+                        "primary-policy", editPrimaryInsurancePolicy.getText().toString().trim(),
+                        "primary-group", editPrimaryInsuranceGroup.getText().toString().trim(),
+                        "secondary-insurance", editSecondaryInsurance.getText().toString().trim(),
+                        "secondary-policy", editSecondaryInsurancePolicy.getText().toString().trim(),
+                        "secondary-group", editSecondaryInsuranceGroup.getText().toString().trim(),
+                        "employer", editEmployer.getText().toString().trim(),
+                        "employer-street", editEmployerStreet.getText().toString().trim(),
+                        "employer-city", editEmployerCity.getText().toString().trim(),
                         "employer-state", EmplState,
-                        "employer-zip", EmplZip,
+                        "employer-zip", editEmployerZip.getText().toString().trim(),
 
                         "primary-em-contact", PrimEmer,
                         "primary-em-phone", PrimEmerContact,
@@ -234,7 +169,6 @@ public class EditPatient extends AppCompatActivity {
                         "surgical-history", surghistory,
                         "conditions", conditions
 
-
                 ).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -246,26 +180,13 @@ public class EditPatient extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast failedUpdate = Toast.makeText(getApplicationContext(), "Oops! Something went wrong in updating your profile.", Toast.LENGTH_LONG);
+                        Toast failedUpdate = Toast.makeText(getApplicationContext(), "Oops! We couldn't update the database. Please check your internet connection.", Toast.LENGTH_LONG);
                         failedUpdate.show();
                         Intent returnToPatientHome = new Intent(getApplicationContext(), LoginPage.class);
                         startActivity(returnToPatientHome);
                     }
                 });
-
-
-
-                Toast successfulSave = Toast.makeText(getApplicationContext(), "Your profile was successfully saved!", Toast.LENGTH_LONG);
-                successfulSave.show();
-
-
-
-
-
             }
         });
-
-
-
     }
 }

@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 
 import javax.annotation.Nullable;
@@ -14,8 +16,8 @@ import javax.annotation.Nullable;
 public class EditPersonalTab extends Fragment {
     @Nullable
 
-    EditText Name, Email, City, StreetAddress, State, Zip, Phone, Gender, Ethnicity, Marital, PInsurance, PInsurancePolicy, PInsuranceGroup, SInsurance, SInsurancePolicy, SInsuranceGroup, Employer, EmployerStreet, EmployerCity, EmployerState, EmployerZip;
-
+    EditText Name, Email, City, StreetAddress, Zip, Phone, Gender, Ethnicity, Marital, PInsurance, PInsurancePolicy, PInsuranceGroup, SInsurance, SInsurancePolicy, SInsuranceGroup, Employer, EmployerStreet, EmployerCity, EmployerState, EmployerZip;
+    Spinner State;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -33,9 +35,6 @@ public class EditPersonalTab extends Fragment {
 
         StreetAddress = fragView.findViewById(R.id.EStreetInput);
         StreetAddress.setText(PatientHome.patientData.get("street-address").toString());
-
-        State = fragView.findViewById(R.id.EStateInput);
-        State.setText(PatientHome.patientData.get("state").toString());
 
         Zip = fragView.findViewById(R.id.EZipInput);
         Zip.setText(PatientHome.patientData.get("zip-code").toString());
