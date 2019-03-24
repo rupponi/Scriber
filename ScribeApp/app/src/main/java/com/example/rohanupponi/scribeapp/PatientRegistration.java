@@ -71,6 +71,7 @@ public class PatientRegistration extends AppCompatActivity {
 
                 String address = addressField.getText().toString().trim();
                 String city = cityField.getText().toString().trim();
+
                 List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
                 State state = Utils.getState(stateChoices.indexOf(stateDropDown.getSelectedItem().toString()));
 

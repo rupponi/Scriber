@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -21,14 +20,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class EditPatient extends AppCompatActivity {
 
     private Button SaveButton;
-    private EditText editName, editEmail, editBirthDate, editPhone, editStreet, editCity, editZip,
+    private EditText updatedName, updatedEmail, updatedBirthdate, updatedPhone, updatedStreet, updatedCity, updatedZip,
                      editPrimaryInsurance, editPrimaryInsurancePolicy, editPrimaryInsuranceGroup,
                      editSecondaryInsurance, editSecondaryInsurancePolicy, editSecondaryInsuranceGroup,
                      editEmployer, editEmployerStreet, editEmployerCity, editEmployerZip,
                      editPrimaryEmergencyContact, editPrimaryEmergencyContactNumber,
                      editSecondaryEmergencyContact, editSecondaryEmergencyContactNumber;
 
-    private Spinner editState;
+    private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,45 +45,36 @@ public class EditPatient extends AppCompatActivity {
         SaveButton = findViewById(R.id.save_changes_button);
 
 
-
-
         SaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                editName = findViewById(R.id.ENameInput);
-                editEmail = findViewById(R.id.EEmailInput);
-                editBirthDate = findViewById(R.id.EAgeInput);
-                editPhone = findViewById(R.id.EPhoneInput);
+                updatedName = findViewById(R.id.edit_name_input);
+                updatedEmail = findViewById(R.id.edit_email_input);
+                updatedBirthdate = findViewById(R.id.edit_birthdate_input);
+                updatedPhone = findViewById(R.id.edit_phone_input);
 
-                EditText Gender = findViewById(R.id.EGenderInput);
-                /*
-                ArrayAdapter genderAdapter = ArrayAdapter.createFromResource(EditPatient.this,
-                        R.array.gender_array,
-                        R.layout.dropdown_layout
-                );
-                genderAdapter.setDropDownViewResource(R.layout.dropdown_layout);
-                Gender.setAdapter(genderAdapter);
-                */
+                updatedStreet = findViewById(R.id.edit_street_address_input);
+                updatedCity = findViewById(R.id.edit_city_input);
+                updatedState = findViewById(R.id.edit_state_input);
+                updatedZip = findViewById(R.id.edit_zip_input);
 
-                editStreet = findViewById(R.id.EStreetInput);
-                editCity = findViewById(R.id.ECityInput);
-                EditText State = findViewById(R.id.EditStateInput);
-                editZip = findViewById(R.id.EZipInput);
-                EditText Ethnicity = findViewById(R.id.EEthnicityInput);
-                EditText Marital = findViewById(R.id.EMaritalInput);
-                editPrimaryInsurance = findViewById(R.id.EPrimaryInsuranceInput);
-                editPrimaryInsurancePolicy = findViewById(R.id.EPrimaryPolicyInput);
-                editPrimaryInsuranceGroup = findViewById(R.id.EPrimaryGroupInput);
-                editSecondaryInsurance = findViewById(R.id.ESecondaryInsuranceInput);
-                editSecondaryInsurancePolicy = findViewById(R.id.ESecondaryPolicyInput);
-                editSecondaryInsuranceGroup = findViewById(R.id.ESecondaryGroupInput);
-                editEmployer = findViewById(R.id.EEmployerInput);
-                editEmployerStreet = findViewById(R.id.EEmployerStreetInput);
-                editEmployerCity = findViewById(R.id.EEmployerCityInput);
-                EditText EmployerState = findViewById(R.id.EEmployerStateInput);
-                editEmployerZip = findViewById(R.id.EEmployerZipInput);
+                updatedEthnicity = findViewById(R.id.edit_ethnicity_input);
+                updatedGender = findViewById(R.id.edit_gender_input);
+                updatedMaritalStatus = findViewById(R.id.edit_marital_input);
+
+                editPrimaryInsurance = findViewById(R.id.edit_primary_insurance_input);
+                editPrimaryInsurancePolicy = findViewById(R.id.edit_primary_insurance_policy_input);
+                editPrimaryInsuranceGroup = findViewById(R.id.edit_primary_insurance_group_input);
+                editSecondaryInsurance = findViewById(R.id.edit_secondary_insurance_input);
+                editSecondaryInsurancePolicy = findViewById(R.id.edit_secondary_insurance_policy_input);
+                editSecondaryInsuranceGroup = findViewById(R.id.edit_secondary_insurance_group_input);
+                editEmployer = findViewById(R.id.edit_employer_input);
+                editEmployerStreet = findViewById(R.id.edit_employer_street_address_input);
+                editEmployerCity = findViewById(R.id.edit_employer_city_input);
+                EditText EmployerState = findViewById(R.id.edit_employer_state_input);
+                editEmployerZip = findViewById(R.id.edit_employer_zip_input);
 
 
 
@@ -103,12 +93,8 @@ public class EditPatient extends AppCompatActivity {
                 EditText SurgicalHistory = findViewById(R.id.ESurgicalHistoryInput);
                 EditText Conditions = findViewById(R.id.EConditionsInput);
 
-                String sEmployer = editEmail.getText().toString().trim();
+                String sEmployer = updatedEmail.getText().toString().trim();
 
-                String sGender = Gender.getText().toString().trim();
-                String Sta= State.getText().toString().trim();
-                String Eth = Ethnicity.getText().toString().trim();
-                String Mar= Marital.getText().toString().trim();
                 String EmplState = EmployerState.getText().toString().trim();
 
 
@@ -133,17 +119,17 @@ public class EditPatient extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
                 db.collection("patients").document(sEmployer).update(
-                        "name", editName.getText().toString().trim(),
-                        "street-address", editStreet.getText().toString().trim(),
-                        "city", editCity.getText().toString().trim(),
-                        "state", Sta,
-                        "gender", sGender,
+                        "name", updatedName.getText().toString().trim(),
+                        "street-address", updatedStreet.getText().toString().trim(),
+                        "city", updatedCity.getText().toString().trim(),
+                        "state", updatedState.getSelectedItem(),
+                        "gender", updatedGender.getSelectedItem(),
                         "email", editEmployer.getText().toString().trim(),
-                        "date-of-birth", editBirthDate.getText().toString().trim(),
-                        "primary-phone", editPhone.getText().toString().trim(),
-                        "zip-code", editZip.getText().toString().trim(),
-                        "ethnicity", Eth,
-                        "marital-status", Mar,
+                        "date-of-birth", updatedBirthdate.getText().toString().trim(),
+                        "primary-phone", updatedPhone.getText().toString().trim(),
+                        "zip-code", updatedZip.getText().toString().trim(),
+                        "ethnicity", updatedEthnicity.getSelectedItem(),
+                        "marital-status", updatedMaritalStatus.getSelectedItem(),
                         "primary-insurance", editPrimaryInsurance.getText().toString().trim(),
                         "primary-policy", editPrimaryInsurancePolicy.getText().toString().trim(),
                         "primary-group", editPrimaryInsuranceGroup.getText().toString().trim(),

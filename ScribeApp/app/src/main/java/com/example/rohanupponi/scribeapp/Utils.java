@@ -26,10 +26,14 @@ public class Utils {
     }
 
     public static Ethnicity getEthnicity(int ethnicityIndex) {
-        return Ethnicity.values()[ethnicityIndex + 1];
+        return Ethnicity.values()[ethnicityIndex];
     }
 
     public static Gender getGender(int genderIndex) {
-        return Gender.values()[genderIndex + 1];
+        return Gender.values()[genderIndex];
+    }
+
+    public static MaritalStatus getMaritalStatus(int maritalStatusIndex) {
+        return MaritalStatus.values()[maritalStatusIndex];
     }
 }

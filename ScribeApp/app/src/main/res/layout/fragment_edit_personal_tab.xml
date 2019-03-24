@@ -17,95 +17,92 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Full Name"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-
-                android:id="@+id/ENameInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_name_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="First and Last Name"
                 android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gender"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
-                android:id="@+id/EGenderInput"
-                android:layout_width="200dp"
+            <Spinner
+                android:id="@+id/edit_gender_input"
+                android:textColor="#000"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:spinnerMode="dropdown"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-
-                android:id="@+id/EEmailInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_email_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="JohnDoe@gmail.com"
-                android:inputType="text"
-                android:layout_marginTop="20dp"/>
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date of Birth"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EAgeInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_birthdate_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="##/##/####"
                 android:inputType="number"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Street Address"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EStreetInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_street_address_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="City"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/ECityInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_city_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="State/Province"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
-                android:id="@+id/EditStateInput"
+            <Spinner
+                android:id="@+id/edit_state_input"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -115,211 +112,206 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Zip Code"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EZipInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_zip_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="#####"
                 android:inputType="number"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Martial Status"
-                android:layout_marginTop="20dp"/>
+                android:text="Marital Status"
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
-
-                android:id="@+id/EMaritalInput"
-                android:layout_width="200dp"
+            <Spinner
+                android:id="@+id/edit_marital_input"
+                android:textColor="#000"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Single/Married/Divorced"
-                android:inputType="text"
-                android:layout_marginTop="20dp" />
-
+                android:spinnerMode="dropdown"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ethnicity"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
-
-                android:id="@+id/EEthnicityInput"
-                android:layout_width="200dp"
+            <Spinner
+                android:id="@+id/edit_ethnicity_input"
+                android:textColor="#000"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:spinnerMode="dropdown"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Primary Phone #"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EPhoneInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_phone_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="###-###-####"
                 android:inputType="number"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Primary Insurance"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EPrimaryInsuranceInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_primary_insurance_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Primary Insurance Policy #"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/EPrimaryPolicyInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_primary_insurance_policy_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Primary Insurance Group Number"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/EPrimaryGroupInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_primary_insurance_group_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Secondary Insurance"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/ESecondaryInsuranceInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_secondary_insurance_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Secondary Insurance Policy #"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/ESecondaryPolicyInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_secondary_insurance_policy_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Secondary Insurance Group Number"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/ESecondaryGroupInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_secondary_insurance_group_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employer Organization"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/EEmployerInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_employer_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employer Street Address"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/EEmployerStreetInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_employer_street_address_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employer City"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
 
-                android:id="@+id/EEmployerCityInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_employer_city_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employer State"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-
-                android:id="@+id/EEmployerStateInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_employer_state_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employer Zip"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
-                android:id="@+id/EEmployerZipInput"
-                android:layout_width="200dp"
+                android:id="@+id/edit_employer_zip_input"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/text_entry_separator"
                 android:layout_marginBottom="80dp"/>
 
         </LinearLayout>

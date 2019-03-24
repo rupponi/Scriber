@@ -10,83 +10,123 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 
 public class EditPersonalTab extends Fragment {
     @Nullable
 
-    EditText Name, Email, City, StreetAddress, Zip, Phone, Gender, Ethnicity, Marital, PInsurance, PInsurancePolicy, PInsuranceGroup, SInsurance, SInsurancePolicy, SInsuranceGroup, Employer, EmployerStreet, EmployerCity, EmployerState, EmployerZip;
-    Spinner State;
+    EditText newName, newEmail, newCity, newStreetAddress, newZip, newPhone, newPrimaryInsurance, newPrimaryInsurancePolicy, newPrimaryInsuranceGroup,
+             newSecondaryInsurance, newSecondaryInsurancePolicy, newSecondaryInsuranceGroup, newEmployer, newEmployerStreet, newEmployerCity, newEmployerState, newEmployerZip;
+    Spinner newState, newGender, newEthnicity, newMarital;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View fragView = inflater.inflate(R.layout.fragment_edit_personal_tab, container, false);
 
+        newName = fragView.findViewById(R.id.edit_name_input);
+        newName.setText(PatientHome.patientData.get("name").toString());
 
-        Name = fragView.findViewById(R.id.ENameInput);
-        Name.setText(PatientHome.patientData.get("name").toString());
+        newEmail = fragView.findViewById(R.id.edit_email_input);
+        newEmail.setText(PatientHome.patientData.getId());
 
-        Email = fragView.findViewById(R.id.EEmailInput);
-        Email.setText(PatientHome.patientData.getId());
+        newStreetAddress = fragView.findViewById(R.id.edit_street_address_input);
+        newStreetAddress.setText(PatientHome.patientData.get("street-address").toString());
 
-        City = fragView.findViewById(R.id.ECityInput);
-        City.setText(PatientHome.patientData.get("city").toString());
+        newCity = fragView.findViewById(R.id.edit_city_input);
+        newCity.setText(PatientHome.patientData.get("city").toString());
 
-        StreetAddress = fragView.findViewById(R.id.EStreetInput);
-        StreetAddress.setText(PatientHome.patientData.get("street-address").toString());
+        newState = fragView.findViewById(R.id.edit_state_input);
+        ArrayAdapter stateAdapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),
+                R.array.states_array,
+                R.layout.dropdown_layout
+        );
+        stateAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+        newState.setAdapter(stateAdapter);
+        List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
+        String currentState = PatientHome.patientData.get("state").toString().trim();
+        int currentStateIndex = stateChoices.indexOf(currentState);
+        newState.setSelection(currentStateIndex);
 
-        Zip = fragView.findViewById(R.id.EZipInput);
-        Zip.setText(PatientHome.patientData.get("zip-code").toString());
 
-        Phone = fragView.findViewById(R.id.EPhoneInput);
-        Phone.setText(PatientHome.patientData.get("primary-phone").toString());
+        newZip = fragView.findViewById(R.id.edit_zip_input);
+        newZip.setText(PatientHome.patientData.get("zip-code").toString());
 
-        Gender = fragView.findViewById(R.id.EGenderInput);
-        Gender.setText(PatientHome.patientData.get("gender").toString());
+        newPhone = fragView.findViewById(R.id.edit_phone_input);
+        newPhone.setText(PatientHome.patientData.get("primary-phone").toString());
 
-        Ethnicity = fragView.findViewById(R.id.EEthnicityInput);
-        Ethnicity.setText(PatientHome.patientData.get("ethnicity").toString());
+        newGender = fragView.findViewById(R.id.edit_gender_input);
+        ArrayAdapter genderAdapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),
+                R.array.gender_array,
+                R.layout.dropdown_layout
+        );
+        genderAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+        newGender.setAdapter(genderAdapter);
+        List<String> genderChoices = Arrays.asList(getResources().getStringArray(R.array.gender_array));
+        String currentGender = PatientHome.patientData.get("gender").toString().trim();
+        int currentGenderIndex = genderChoices.indexOf(currentGender);
+        newGender.setSelection(currentGenderIndex);
 
-        Marital = fragView.findViewById(R.id.EMaritalInput);
-        Marital.setText(PatientHome.patientData.get("marital-status").toString());
+        newEthnicity = fragView.findViewById(R.id.edit_ethnicity_input);
+        ArrayAdapter ethnicityAdapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),
+                R.array.ethnicity_array,
+                R.layout.dropdown_layout
+        );
+        ethnicityAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+        newEthnicity.setAdapter(ethnicityAdapter);
+        List<String> ethnicityChoices = Arrays.asList(getResources().getStringArray(R.array.ethnicity_array));
+        String currentEthnicity = PatientHome.patientData.get("ethnicity").toString().trim();
+        int currentEthnicityIndex = ethnicityChoices.indexOf(currentEthnicity);
+        newEthnicity.setSelection(currentEthnicityIndex);
 
-        PInsurance = fragView.findViewById(R.id.EPrimaryInsuranceInput);
-        PInsurance.setText(PatientHome.patientData.get("primary-insurance").toString());
+        newMarital = fragView.findViewById(R.id.edit_marital_input);
+        ArrayAdapter maritalAdapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),
+                R.array.marital_status_array,
+                R.layout.dropdown_layout
+        );
+        maritalAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+        newMarital.setAdapter(maritalAdapter);
+        List<String> maritalChoices = Arrays.asList(getResources().getStringArray(R.array.marital_status_array));
+        String currentStatus = PatientHome.patientData.get("marital-status").toString().trim();
+        int currentStatusIndex = maritalChoices.indexOf(currentStatus);
+        newMarital.setSelection(currentStatusIndex);
 
-        PInsurancePolicy = fragView.findViewById(R.id.EPrimaryPolicyInput);
-        PInsurancePolicy.setText(PatientHome.patientData.get("primary-policy").toString());
+        newPrimaryInsurance = fragView.findViewById(R.id.edit_primary_insurance_input);
+        newPrimaryInsurance.setText(PatientHome.patientData.get("primary-insurance").toString());
 
-        PInsuranceGroup = fragView.findViewById(R.id.EPrimaryGroupInput);
-        PInsuranceGroup.setText(PatientHome.patientData.get("primary-group").toString());
+        newPrimaryInsurancePolicy = fragView.findViewById(R.id.edit_primary_insurance_policy_input);
+        newPrimaryInsurancePolicy.setText(PatientHome.patientData.get("primary-policy").toString());
 
-        SInsurance = fragView.findViewById(R.id.ESecondaryInsuranceInput);
-        SInsurance.setText(PatientHome.patientData.get("secondary-insurance").toString());
+        newPrimaryInsuranceGroup = fragView.findViewById(R.id.edit_primary_insurance_group_input);
+        newPrimaryInsuranceGroup.setText(PatientHome.patientData.get("primary-group").toString());
 
-        SInsurancePolicy = fragView.findViewById(R.id.ESecondaryPolicyInput);
-        SInsurancePolicy.setText(PatientHome.patientData.get("secondary-policy").toString());
+        newSecondaryInsurance = fragView.findViewById(R.id.edit_secondary_insurance_input);
+        newSecondaryInsurance.setText(PatientHome.patientData.get("secondary-insurance").toString());
 
-        SInsuranceGroup = fragView.findViewById(R.id.ESecondaryGroupInput);
-        SInsuranceGroup.setText(PatientHome.patientData.get("secondary-group").toString());
+        newSecondaryInsurancePolicy = fragView.findViewById(R.id.edit_secondary_insurance_policy_input);
+        newSecondaryInsurancePolicy.setText(PatientHome.patientData.get("secondary-policy").toString());
 
-        Employer = fragView.findViewById(R.id.EEmployerInput);
-        Employer.setText(PatientHome.patientData.get("employer").toString());
+        newSecondaryInsuranceGroup = fragView.findViewById(R.id.edit_secondary_insurance_group_input);
+        newSecondaryInsuranceGroup.setText(PatientHome.patientData.get("secondary-group").toString());
 
-        EmployerStreet = fragView.findViewById(R.id.EEmployerStreetInput);
-        EmployerStreet.setText(PatientHome.patientData.get("employer-street").toString());
+        newEmployer = fragView.findViewById(R.id.edit_employer_input);
+        newEmployer.setText(PatientHome.patientData.get("employer").toString());
 
-        EmployerCity = fragView.findViewById(R.id.EEmployerCityInput);
-        EmployerCity.setText(PatientHome.patientData.get("employer-city").toString());
+        newEmployerStreet = fragView.findViewById(R.id.edit_employer_street_address_input);
+        newEmployerStreet.setText(PatientHome.patientData.get("employer-street").toString());
 
-        EmployerState = fragView.findViewById(R.id.EEmployerStateInput);
-        EmployerState.setText(PatientHome.patientData.get("employer-state").toString());
+        newEmployerCity = fragView.findViewById(R.id.edit_employer_city_input);
+        newEmployerCity.setText(PatientHome.patientData.get("employer-city").toString());
 
-        EmployerZip = fragView.findViewById(R.id.EEmployerZipInput);
-        EmployerZip.setText(PatientHome.patientData.get("employer-zip").toString());
+        newEmployerState = fragView.findViewById(R.id.edit_employer_state_input);
+        newEmployerState.setText(PatientHome.patientData.get("employer-state").toString());
+
+        newEmployerZip = fragView.findViewById(R.id.edit_employer_zip_input);
+        newEmployerZip.setText(PatientHome.patientData.get("employer-zip").toString());
 
         return fragView;
-
-
-
     }
 }
