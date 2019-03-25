@@ -25,6 +25,8 @@
                 android:layout_height="wrap_content"
                 android:hint="First and Last Name"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -38,6 +40,8 @@
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dropdown_screen_border"
+                android:layout_marginTop="15sp"
                 android:spinnerMode="dropdown"/>
 
             <TextView
@@ -46,12 +50,14 @@
                 android:text="Email"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
-                android:id="@+id/edit_email_input"
+            <TextView
+                android:id="@+id/forced_set_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="JohnDoe@gmail.com"
                 android:inputType="textEmailAddress"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
@@ -66,6 +72,8 @@
                 android:layout_height="wrap_content"
                 android:hint="##/##/####"
                 android:inputType="number"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
 
@@ -80,6 +88,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
@@ -93,6 +103,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
@@ -106,6 +118,8 @@
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dropdown_screen_border"
+                android:layout_marginTop="15sp"
                 android:spinnerMode="dropdown"/>
 
             <TextView
@@ -120,6 +134,9 @@
                 android:layout_height="wrap_content"
                 android:hint="#####"
                 android:inputType="number"
+                android:maxLength="5"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
@@ -133,6 +150,8 @@
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dropdown_screen_border"
+                android:layout_marginTop="15sp"
                 android:spinnerMode="dropdown"/>
 
             <TextView
@@ -146,6 +165,8 @@
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dropdown_screen_border"
+                android:layout_marginTop="15sp"
                 android:spinnerMode="dropdown"/>
 
             <TextView
@@ -160,6 +181,8 @@
                 android:layout_height="wrap_content"
                 android:hint="###-###-####"
                 android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
 
@@ -174,6 +197,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <TextView
@@ -188,6 +213,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -202,6 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -215,6 +243,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -229,6 +259,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -243,6 +275,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -257,6 +291,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -271,6 +307,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -285,6 +323,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -293,11 +332,13 @@
                 android:text="Employer State"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
-            <EditText
+            <Spinner
                 android:id="@+id/edit_employer_state_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textSize="@dimen/user_entry_field_text"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />
 
             <TextView
@@ -311,11 +352,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginTop="@dimen/text_entry_separator"
+                android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginBottom="80dp"/>
 
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>

@@ -20,14 +20,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class EditPatient extends AppCompatActivity {
 
     private Button SaveButton;
-    private EditText updatedName, updatedEmail, updatedBirthdate, updatedPhone, updatedStreet, updatedCity, updatedZip,
+    private EditText updatedName, updatedBirthdate, updatedPhone, updatedStreet, updatedCity, updatedZip,
                      editPrimaryInsurance, editPrimaryInsurancePolicy, editPrimaryInsuranceGroup,
                      editSecondaryInsurance, editSecondaryInsurancePolicy, editSecondaryInsuranceGroup,
                      editEmployer, editEmployerStreet, editEmployerCity, editEmployerZip,
                      editPrimaryEmergencyContact, editPrimaryEmergencyContactNumber,
                      editSecondaryEmergencyContact, editSecondaryEmergencyContactNumber;
 
-    private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus;
+    private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus, updatedEmployerState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class EditPatient extends AppCompatActivity {
 
 
                 updatedName = findViewById(R.id.edit_name_input);
-                updatedEmail = findViewById(R.id.edit_email_input);
                 updatedBirthdate = findViewById(R.id.edit_birthdate_input);
                 updatedPhone = findViewById(R.id.edit_phone_input);
 
@@ -73,7 +72,7 @@ public class EditPatient extends AppCompatActivity {
                 editEmployer = findViewById(R.id.edit_employer_input);
                 editEmployerStreet = findViewById(R.id.edit_employer_street_address_input);
                 editEmployerCity = findViewById(R.id.edit_employer_city_input);
-                EditText EmployerState = findViewById(R.id.edit_employer_state_input);
+                updatedEmployerState = findViewById(R.id.edit_employer_state_input);
                 editEmployerZip = findViewById(R.id.edit_employer_zip_input);
 
 
@@ -93,9 +92,7 @@ public class EditPatient extends AppCompatActivity {
                 EditText SurgicalHistory = findViewById(R.id.ESurgicalHistoryInput);
                 EditText Conditions = findViewById(R.id.EConditionsInput);
 
-                String sEmployer = updatedEmail.getText().toString().trim();
-
-                String EmplState = EmployerState.getText().toString().trim();
+                String sEmployer = editEmployer.getText().toString().trim();
 
 
 
@@ -118,13 +115,12 @@ public class EditPatient extends AppCompatActivity {
                //******************* PUSH TO DATABASE SECTION ********************//
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                db.collection("patients").document(sEmployer).update(
+                db.collection("patients").document(PatientHome.patientData.getId()).update(
                         "name", updatedName.getText().toString().trim(),
                         "street-address", updatedStreet.getText().toString().trim(),
                         "city", updatedCity.getText().toString().trim(),
                         "state", updatedState.getSelectedItem(),
                         "gender", updatedGender.getSelectedItem(),
-                        "email", editEmployer.getText().toString().trim(),
                         "date-of-birth", updatedBirthdate.getText().toString().trim(),
                         "primary-phone", updatedPhone.getText().toString().trim(),
                         "zip-code", updatedZip.getText().toString().trim(),
@@ -139,7 +135,7 @@ public class EditPatient extends AppCompatActivity {
                         "employer", editEmployer.getText().toString().trim(),
                         "employer-street", editEmployerStreet.getText().toString().trim(),
                         "employer-city", editEmployerCity.getText().toString().trim(),
-                        "employer-state", EmplState,
+                        "employer-state", updatedEmployerState.getSelectedItem(),
                         "employer-zip", editEmployerZip.getText().toString().trim(),
 
                         "primary-em-contact", PrimEmer,

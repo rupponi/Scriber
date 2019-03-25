@@ -4,4 +4,5 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:textColor="#000"
+    android:background="@drawable/dropdown_menu_layout"
     android:textSize="@dimen/user_entry_field_text"/>

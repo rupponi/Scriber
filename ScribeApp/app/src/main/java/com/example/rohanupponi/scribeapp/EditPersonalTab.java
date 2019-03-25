@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 import java.util.Arrays;
@@ -19,19 +20,27 @@ import javax.annotation.Nullable;
 public class EditPersonalTab extends Fragment {
     @Nullable
 
-    EditText newName, newEmail, newCity, newStreetAddress, newZip, newPhone, newPrimaryInsurance, newPrimaryInsurancePolicy, newPrimaryInsuranceGroup,
-             newSecondaryInsurance, newSecondaryInsurancePolicy, newSecondaryInsuranceGroup, newEmployer, newEmployerStreet, newEmployerCity, newEmployerState, newEmployerZip;
-    Spinner newState, newGender, newEthnicity, newMarital;
+    EditText newName, newCity, newStreetAddress, newZip, newPhone, newPrimaryInsurance, newPrimaryInsurancePolicy, newPrimaryInsuranceGroup,
+             newSecondaryInsurance, newSecondaryInsurancePolicy, newSecondaryInsuranceGroup, newEmployer, newEmployerStreet, newEmployerCity, newEmployerZip;
+    Spinner newState, newGender, newEthnicity, newMarital, newEmployerState;
+    TextView constantEmail;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View fragView = inflater.inflate(R.layout.fragment_edit_personal_tab, container, false);
 
+
+        List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
+        List<String> maritalChoices = Arrays.asList(getResources().getStringArray(R.array.marital_status_array));
+        List<String> genderChoices = Arrays.asList(getResources().getStringArray(R.array.gender_array));
+        List<String> ethnicityChoices = Arrays.asList(getResources().getStringArray(R.array.ethnicity_array));
+
+
         newName = fragView.findViewById(R.id.edit_name_input);
         newName.setText(PatientHome.patientData.get("name").toString());
 
-        newEmail = fragView.findViewById(R.id.edit_email_input);
-        newEmail.setText(PatientHome.patientData.getId());
+        constantEmail = fragView.findViewById(R.id.forced_set_email);
+        constantEmail.setText(PatientHome.patientData.getId());
 
         newStreetAddress = fragView.findViewById(R.id.edit_street_address_input);
         newStreetAddress.setText(PatientHome.patientData.get("street-address").toString());
@@ -46,7 +55,6 @@ public class EditPersonalTab extends Fragment {
         );
         stateAdapter.setDropDownViewResource(R.layout.dropdown_layout);
         newState.setAdapter(stateAdapter);
-        List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
         String currentState = PatientHome.patientData.get("state").toString().trim();
         int currentStateIndex = stateChoices.indexOf(currentState);
         newState.setSelection(currentStateIndex);
@@ -65,7 +73,6 @@ public class EditPersonalTab extends Fragment {
         );
         genderAdapter.setDropDownViewResource(R.layout.dropdown_layout);
         newGender.setAdapter(genderAdapter);
-        List<String> genderChoices = Arrays.asList(getResources().getStringArray(R.array.gender_array));
         String currentGender = PatientHome.patientData.get("gender").toString().trim();
         int currentGenderIndex = genderChoices.indexOf(currentGender);
         newGender.setSelection(currentGenderIndex);
@@ -77,7 +84,6 @@ public class EditPersonalTab extends Fragment {
         );
         ethnicityAdapter.setDropDownViewResource(R.layout.dropdown_layout);
         newEthnicity.setAdapter(ethnicityAdapter);
-        List<String> ethnicityChoices = Arrays.asList(getResources().getStringArray(R.array.ethnicity_array));
         String currentEthnicity = PatientHome.patientData.get("ethnicity").toString().trim();
         int currentEthnicityIndex = ethnicityChoices.indexOf(currentEthnicity);
         newEthnicity.setSelection(currentEthnicityIndex);
@@ -89,10 +95,8 @@ public class EditPersonalTab extends Fragment {
         );
         maritalAdapter.setDropDownViewResource(R.layout.dropdown_layout);
         newMarital.setAdapter(maritalAdapter);
-        List<String> maritalChoices = Arrays.asList(getResources().getStringArray(R.array.marital_status_array));
         String currentStatus = PatientHome.patientData.get("marital-status").toString().trim();
-        int currentStatusIndex = maritalChoices.indexOf(currentStatus);
-        newMarital.setSelection(currentStatusIndex);
+        newMarital.setSelection(maritalChoices.indexOf(currentStatus));
 
         newPrimaryInsurance = fragView.findViewById(R.id.edit_primary_insurance_input);
         newPrimaryInsurance.setText(PatientHome.patientData.get("primary-insurance").toString());
@@ -122,7 +126,14 @@ public class EditPersonalTab extends Fragment {
         newEmployerCity.setText(PatientHome.patientData.get("employer-city").toString());
 
         newEmployerState = fragView.findViewById(R.id.edit_employer_state_input);
-        newEmployerState.setText(PatientHome.patientData.get("employer-state").toString());
+        ArrayAdapter employerStateAdapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),
+                R.array.states_array,
+                R.layout.dropdown_layout
+        );
+        employerStateAdapter.setDropDownViewResource(R.layout.dropdown_layout);
+        newEmployerState.setAdapter(employerStateAdapter);
+        String currentEmployerState = PatientHome.patientData.get("employer-state").toString().trim();
+        newEmployerState.setSelection(stateChoices.indexOf(currentEmployerState));
 
         newEmployerZip = fragView.findViewById(R.id.edit_employer_zip_input);
         newEmployerZip.setText(PatientHome.patientData.get("employer-zip").toString());
