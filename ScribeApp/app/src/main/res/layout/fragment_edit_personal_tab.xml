@@ -352,6 +352,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:maxLength="5"
                 android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginTop="@dimen/text_entry_separator"
                 android:layout_marginStart="@dimen/edittext_screen_border"

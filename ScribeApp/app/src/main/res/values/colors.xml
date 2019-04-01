@@ -8,4 +8,6 @@
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+    <color name="profile_field_border_color">#ccc</color>
 </resources>

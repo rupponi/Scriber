@@ -32,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/screen_border"
-                android:layout_marginBottom="@dimen/screen_border"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -48,7 +47,7 @@
                         android:background="@drawable/rounded_button_layout"
                         android:text="Logout"
                         android:textColor="@color/white"
-                        style="?android:attr/borderlessButtonStyle"/>
+                        android:layout_marginBottom="@dimen/logout_button_margin"/>
 
 
                     <android.support.design.widget.FloatingActionButton
@@ -60,6 +59,8 @@
                         android:background="?android:selectableItemBackground"
                         android:src="@drawable/edit_icon"
                         android:elevation="0sp"
+                        android:layout_marginBottom="@dimen/edit_button_margin"
+                        android:layout_marginRight="@dimen/edit_button_margin"
                         style="?android:attr/borderlessButtonStyle"/>
 
                 </RelativeLayout>

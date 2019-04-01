@@ -15,4 +15,7 @@
     <dimen name="dropdown_screen_border">18sp</dimen>
     <dimen name="edittext_screen_border">16sp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="edit_button_margin">12sp</dimen>
+    <dimen name="logout_button_margin">15sp</dimen>
 </resources>

@@ -31,7 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/screen_border"
-                android:layout_marginBottom="@dimen/screen_border"
                 android:orientation="horizontal">
 
                 <Button
@@ -42,6 +41,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/rounded_button_layout"
                     android:text="Save"
+                    android:layout_marginBottom="@dimen/logout_button_margin"
                     android:textColor="@color/white"/>
             </RelativeLayout>
 

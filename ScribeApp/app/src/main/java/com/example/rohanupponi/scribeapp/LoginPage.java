@@ -22,12 +22,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginPage extends AppCompatActivity {
     public static final String TAG = "LoginPage";
-    private String[] user_creds = new String[2];
+    private String[] userCreds = new String[2];
 
     Button loginButton, signUpButton;
     TextView forgotPassLink;
     ProgressBar progressBar;
     FirebaseAuth loginAuth;
+    FirebaseUser foundUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,11 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
         loginAuth = FirebaseAuth.getInstance();
-        FirebaseUser loggedInUser;
         if (loginAuth.getCurrentUser() != null) {
-            loggedInUser = loginAuth.getCurrentUser();
-            user_creds[0] = loggedInUser.getEmail();
+            foundUser = loginAuth.getCurrentUser();
+            userCreds[0] = foundUser.getEmail();
             Intent automaticLoginPatient = new Intent(getApplicationContext(), PatientHome.class);
-            automaticLoginPatient.putExtra("patient_creds", user_creds);
+            automaticLoginPatient.putExtra("patient_creds", userCreds);
             startActivity(automaticLoginPatient);
             return;
         }
@@ -63,7 +63,7 @@ public class LoginPage extends AppCompatActivity {
 
                 if (email.matches("")) {
                     progressBar.setVisibility(View.GONE);
-                    Toast requestEmail = Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_LONG);
+                    Toast requestEmail = Toast.makeText(getApplicationContext(), "@str", Toast.LENGTH_LONG);
                     requestEmail.show();
                     return;
                 }
@@ -78,7 +78,7 @@ public class LoginPage extends AppCompatActivity {
                 emailfield.getText().clear();
                 passwordfield.getText().clear();
 
-                user_creds[0] = email;
+                userCreds[0] = email;
 
                 final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -88,7 +88,7 @@ public class LoginPage extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> authenticate) {
                         if (authenticate.isSuccessful()) {
                             Log.d(LoginPage.TAG, "Credentials valid.");
-                            db.collection("patients").document(user_creds[0]).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            db.collection("patients").document(userCreds[0]).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     if (task.isSuccessful()) {
@@ -96,7 +96,7 @@ public class LoginPage extends AppCompatActivity {
                                         if (patientDoc.exists()) {
                                             progressBar.setVisibility(View.GONE);
                                             Intent loginPatient = new Intent(getApplicationContext(), PatientHome.class);
-                                            loginPatient.putExtra("patient_creds", user_creds);
+                                            loginPatient.putExtra("patient_creds", userCreds);
                                             startActivity(loginPatient);
                                         }
                                         else {
