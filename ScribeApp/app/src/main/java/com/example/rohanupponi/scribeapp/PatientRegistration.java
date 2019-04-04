@@ -34,6 +34,8 @@ public class PatientRegistration extends AppCompatActivity {
     private EditText nameField, emailField, addressField, cityField, zipField,
                      passwordField, passwordConfirmField;
     private Spinner stateDropDown;
+    private String name, email, address, city, sZip, password, passwordConfirm;
+    private Map<String, Object> newPatient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,20 +68,20 @@ public class PatientRegistration extends AppCompatActivity {
 //====================================================================================================================//
 
 //============== COLLECT DATA FROM TEXT FIELDS =======================================================================//
-                String name = nameField.getText().toString().trim();
-                String email = emailField.getText().toString().trim();
+                name = nameField.getText().toString().trim();
+                email = emailField.getText().toString().trim();
 
 
-                String address = addressField.getText().toString().trim();
-                String city = cityField.getText().toString().trim();
+                address = addressField.getText().toString().trim();
+                city = cityField.getText().toString().trim();
 
                 List<String> stateChoices = Arrays.asList(getResources().getStringArray(R.array.states_array));
                 State state = Utils.getState(stateChoices.indexOf(stateDropDown.getSelectedItem().toString()));
 
-                String sZip = zipField.getText().toString().trim();
+                sZip = zipField.getText().toString().trim();
 
-                String password = passwordField.getText().toString().trim();
-                String passwordConfirm = passwordConfirmField.getText().toString().trim();
+                password = passwordField.getText().toString().trim();
+                passwordConfirm = passwordConfirmField.getText().toString().trim();
 //====================================================================================================================//
 
 //============== IF A FIELD IS EMPTY, YOU SHALL NOT PASS =============================================================//
@@ -108,7 +110,7 @@ public class PatientRegistration extends AppCompatActivity {
 //====================================================================================================================//
 
 //============== GENERATE NEW PATIENT FROM INPUT FIELD DATA ==========================================================//
-                Map<String, Object> newPatient = new HashMap<>();
+                newPatient = new HashMap<>();
                 newPatient.put("name", name);
                 newPatient.put("street-address", address);
                 newPatient.put("city", city);
@@ -155,37 +157,33 @@ public class PatientRegistration extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> register) {
                         if (register.isSuccessful()) {
-                            return;
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            db.collection("patients").document(email).set(newPatient).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(PatientRegistration.TAG, "Successful registration of patient.");
+                                    Toast successfulRegistration = Toast.makeText(getApplicationContext(), "Congratulations! You are now registered!", Toast.LENGTH_LONG);
+                                    successfulRegistration.show();
+
+                                    Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
+                                    startActivity(redirectToPatientLogin);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(PatientRegistration.TAG, "Unsuccessful registration of patient.");
+                                    Toast failedRegistration = Toast.makeText(getApplicationContext(), "Oops! Looks like we had some issues in setting up your account!", Toast.LENGTH_LONG);
+                                    failedRegistration.show();
+
+                                    Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
+                                    startActivity(redirectToPatientLogin);
+                                }
+                            });
                         }
                         else {
                             Toast test = Toast.makeText(getApplicationContext(), "Registration: Failure to register credentials", Toast.LENGTH_LONG);
                             test.show();
                         }
-                    }
-                });
-//====================================================================================================================//
-
-//============== REGISTER PATIENT DATA IN DATABASE ===================================================================//
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("patients").document(email).set(newPatient).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(PatientRegistration.TAG, "Successful registration of patient.");
-                        Toast successfulRegistration = Toast.makeText(getApplicationContext(), "Congratulations! You are now registered!", Toast.LENGTH_LONG);
-                        successfulRegistration.show();
-
-                        Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
-                        startActivity(redirectToPatientLogin);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(PatientRegistration.TAG, "Unsuccessful registration of patient.");
-                        Toast failedRegistration = Toast.makeText(getApplicationContext(), "Oops! Looks like we had some issues in setting up your account!", Toast.LENGTH_LONG);
-                        failedRegistration.show();
-
-                        Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
-                        startActivity(redirectToPatientLogin);
                     }
                 });
 //====================================================================================================================//
