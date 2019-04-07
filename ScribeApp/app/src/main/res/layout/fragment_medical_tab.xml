@@ -13,7 +13,6 @@ android:layout_height="match_parent">
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <ImageView
             android:layout_width="100sp"
             android:layout_height="100sp"
@@ -28,13 +27,16 @@ android:layout_height="match_parent">
             android:layout_marginLeft="20sp"
             android:orientation="vertical">
 
+<!--======= EMERGENCY CONTACT SECTION ===========================================================-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="Emergency Contact Section"
+                android:text="EMERGENCY"
                 android:gravity="center"
                 android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/user_profile_text" />
 
             <View
@@ -51,6 +53,13 @@ android:layout_height="match_parent">
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tab_button_separator" />
+
+            <!-- PRIMARY EMERGENCY NAME FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "PRIMARY EMERGENCY NAME"/>
 
             <TextView
                 android:id="@+id/PrimaryEmergencyInput"
@@ -58,11 +67,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- PRIMARY EMERGENCY PHONE NUMBER FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "PRIMARY CONTACT PHONE NUMBER"/>
 
             <TextView
                 android:id="@+id/PrimaryEContactInput"
@@ -70,11 +91,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- SECONDARY EMERGENCY NAME FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "SECONDARY EMERGENCY NAME"/>
 
             <TextView
                 android:id="@+id/SecondaryEmergencyInput"
@@ -82,11 +115,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- SECONDARY EMERGENCY PHONE NUMBER FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "SECONDARY CONTACT PHONE NUMBER"/>
 
             <TextView
                 android:id="@+id/SecondaryEContactInput"
@@ -94,21 +139,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:layout_marginBottom="20dp"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="20sp"/>
 
+<!--======== GENERAL MEDICAL INFORMATION SECTION ================================================-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="General Medical Information"
+                android:text="GENERAL INFORMATION"
                 android:gravity="center"
                 android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/user_profile_text" />
 
             <View
@@ -125,6 +172,13 @@ android:layout_height="match_parent">
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tab_button_separator" />
+
+            <!-- BLOOD TYPE FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "BLOOD TYPE"/>
 
             <TextView
                 android:id="@+id/BloodtypeInput"
@@ -132,11 +186,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- PRESCRIPTIONS FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "PRESCRIPTIONS"/>
 
             <TextView
                 android:id="@+id/PrescriptionInput"
@@ -144,11 +210,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- VACCINATIONS FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "VACCINATIONS"/>
 
             <TextView
                 android:id="@+id/VaccinationInput"
@@ -156,11 +234,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- LIFESTYLE FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "LIFESTYLE"/>
 
             <TextView
                 android:id="@+id/LifestyleInput"
@@ -168,21 +258,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:layout_marginBottom="20dp"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="20sp" />
 
+<!--======== MEDICAL HISTORY SECTION ============================================================-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="Medical History and Conditions"
+                android:text="MEDICAL HISTORY AND CONDITIONS"
                 android:gravity="center"
                 android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/user_profile_text" />
 
             <View
@@ -200,17 +292,36 @@ android:layout_height="match_parent">
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tab_button_separator" />
 
+            <!-- ALLERGIES FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "ALLERGIES"/>
+
             <TextView
                 android:id="@+id/AllergiesInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- FAMILY HISTORY FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "FAMILY HISTORY"/>
 
             <TextView
                 android:id="@+id/FamilyHistoryInput"
@@ -218,11 +329,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- SURGICAL HISTORY INPUT -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "SURGICAL HISTORY"/>
 
             <TextView
                 android:id="@+id/SurgicalHistoryInput"
@@ -230,11 +353,23 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
+
+            <!-- MEDICAL CONDITIONS FIELD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor = "@color/colorPrimary"
+                android:text = "MEDICAL CONDITIONS"/>
 
             <TextView
                 android:id="@+id/ConditionsInput"
@@ -242,12 +377,16 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
-                android:layout_marginBottom="70dp"
-                android:textSize="@dimen/user_profile_text" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/user_profile_text"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_entry_separator" />
+                android:layout_height="2sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:background="@color/profile_field_border_color" />
 
 
         </LinearLayout>
