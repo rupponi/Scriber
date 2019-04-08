@@ -23,6 +23,7 @@ public class PatientHome extends AppCompatActivity {
     static DocumentSnapshot patientData;
     private Button logoutButton;
     private FloatingActionButton editProfileButton;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class PatientHome extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     patientData = task.getResult();
 
-                    ViewPager viewPager = findViewById(R.id.main_view_pager);
+                    viewPager = findViewById(R.id.main_view_pager);
                     viewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
 
                     TabLayout profileTabs = findViewById(R.id.profile_tabs);

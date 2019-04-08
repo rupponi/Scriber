@@ -28,15 +28,15 @@ public class EditPatient extends AppCompatActivity {
                      editSecondaryEmergencyContact, editSecondaryEmergencyContactNumber;
 
     private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus, updatedEmployerState;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_patient);
 
-        ViewPager viewPager = findViewById(R.id.edit_view_pager);
+        viewPager = findViewById(R.id.edit_view_pager);
         viewPager.setAdapter(new EditViewPagerAdapter(getSupportFragmentManager()));
-
 
         TabLayout editTabs = findViewById(R.id.edit_tabs);
         editTabs.setTabTextColors(ContextCompat.getColor(getApplicationContext(), R.color.unselectedTab), ContextCompat.getColor(getApplicationContext(), R.color.selectedTab));
@@ -77,7 +77,7 @@ public class EditPatient extends AppCompatActivity {
 
 
 
-                editPrimaryEmergencyContact = findViewById(R.id.EPrimaryEmergencyInput);
+                editPrimaryEmergencyContact = findViewById(R.id.edit_primary_emergency_name);
                 editPrimaryEmergencyContactNumber = findViewById(R.id.EPrimaryEContactInput);
                 editSecondaryEmergencyContact = findViewById(R.id.ESecondaryEmergencyInput);
                 editSecondaryEmergencyContactNumber = findViewById(R.id.ESecondaryEContactInput);

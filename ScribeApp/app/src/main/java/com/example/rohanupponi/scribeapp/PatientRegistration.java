@@ -112,40 +112,40 @@ public class PatientRegistration extends AppCompatActivity {
 //============== GENERATE NEW PATIENT FROM INPUT FIELD DATA ==========================================================//
                 newPatient = new HashMap<>();
                 newPatient.put("name", name);
-                newPatient.put("street-address", address);
-                newPatient.put("city", city);
-                newPatient.put("state", state);
-                newPatient.put("zip-code", Integer.parseInt(sZip));
+                newPatient.put("address-street", address);
+                newPatient.put("address-city", city);
+                newPatient.put("address-state", state);
+                newPatient.put("address-zip-code", Integer.parseInt(sZip));
 
                 newPatient.put("primary-phone", "000-000-0000");
                 newPatient.put("gender", Gender.NONE);
                 newPatient.put("date-of-birth", "01/01/0000");
                 newPatient.put("marital-status", MaritalStatus.NONE);
                 newPatient.put("ethnicity", Ethnicity.NONE);
-                newPatient.put("primary-insurance","NONE");
+                newPatient.put("primary-insurance","Not Specified");
                 newPatient.put("primary-policy","0");
                 newPatient.put("primary-group", "0");
-                newPatient.put("secondary-insurance","NONE");
+                newPatient.put("secondary-insurance","Not Specified");
                 newPatient.put("secondary-policy","0");
                 newPatient.put("secondary-group", "0");
-                newPatient.put("employer", "NONE");
-                newPatient.put("employer-street", "NONE");
-                newPatient.put("employer-city", "NONE");
-                newPatient.put("employer-state", State.NONE);
-                newPatient.put("employer-zip","00000");
+                newPatient.put("employer", "Not Specified");
+                newPatient.put("employer-address-street", "Not Specified");
+                newPatient.put("employer-address-city", "Not Specified");
+                newPatient.put("employer-address-state", State.NONE);
+                newPatient.put("employer-address-zip","00000");
 
-                newPatient.put("primary-em-contact", "NONE");
-                newPatient.put("primary-em-phone", "NONE");
-                newPatient.put("secondary-em-contact", "NONE");
-                newPatient.put("secondary-em-phone","NONE");
-                newPatient.put("blood-type", "NONE");
-                newPatient.put("prescription-dosage", "NONE");
-                newPatient.put("vaccinations", "NONE");
-                newPatient.put("lifestyle", "NONE");
-                newPatient.put("allergies", "NONE");
-                newPatient.put("family-history", "NONE");
-                newPatient.put("surgical-history", "NONE");
-                newPatient.put("conditions", "NONE");
+                newPatient.put("primary-em-contact", "Not Specified");
+                newPatient.put("primary-em-phone", "Not Specified");
+                newPatient.put("secondary-em-contact", "Not Specified");
+                newPatient.put("secondary-em-phone","Not Specified");
+                newPatient.put("blood-type", "Not Specified");
+                newPatient.put("prescription-dosage", "Not Specified");
+                newPatient.put("vaccinations", "Not Specified");
+                newPatient.put("lifestyle", "Not Specified");
+                newPatient.put("allergies", "Not Specified");
+                newPatient.put("family-history", "Not Specified");
+                newPatient.put("surgical-history", "Not Specified");
+                newPatient.put("conditions", "Not Specified");
 
 
 

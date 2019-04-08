@@ -49,26 +49,29 @@ public class PersonalTab extends Fragment {
 
         patientName.setText(PatientHome.patientData.get("name").toString());
         patientEmail.setText(PatientHome.patientData.getId());
-        patientStreetAddress.setText(PatientHome.patientData.get("street-address").toString());
-        patientCity.setText(PatientHome.patientData.get("city").toString());
-        patientState.setText(PatientHome.patientData.get("state").toString());
-        patientZip.setText(PatientHome.patientData.get("zip-code").toString());
+        patientStreetAddress.setText(PatientHome.patientData.get("address-street").toString());
+        patientCity.setText(PatientHome.patientData.get("address-city").toString());
+        patientState.setText(PatientHome.patientData.get("address-state").toString());
+        patientZip.setText(PatientHome.patientData.get("address-zip-code").toString());
+
         patientPhone.setText(PatientHome.patientData.get("primary-phone").toString());
         patientGender.setText(PatientHome.patientData.get("gender").toString());
         patientMarital.setText(PatientHome.patientData.get("marital-status").toString());
         patientEthnicity.setText(PatientHome.patientData.get("ethnicity").toString());
         patientAge.setText(PatientHome.patientData.get("date-of-birth").toString());
+
         patientPrimaryInsurance.setText(PatientHome.patientData.get("primary-insurance").toString());
         patientPrimaryInsurancePolicy.setText(PatientHome.patientData.get("primary-policy").toString());
         patientPrimaryInsuranceGroup.setText(PatientHome.patientData.get("primary-group").toString());
         patientSecondaryInsurance.setText(PatientHome.patientData.get("secondary-insurance").toString());
         patientSecondaryInsurancePolicy.setText(PatientHome.patientData.get("secondary-policy").toString());
         patientSecondaryInsuranceGroup.setText(PatientHome.patientData.get("secondary-group").toString());
+
         patientEmployer.setText(PatientHome.patientData.get("employer").toString());
-        patientEmployerStreet.setText(PatientHome.patientData.get("employer-street").toString());
-        patientEmployerCity.setText(PatientHome.patientData.get("employer-city").toString());
-        patientEmployerState.setText(PatientHome.patientData.get("employer-state").toString());
-        patientEmployerZip.setText(PatientHome.patientData.get("employer-zip").toString());
+        patientEmployerStreet.setText(PatientHome.patientData.get("employer-address-street").toString());
+        patientEmployerCity.setText(PatientHome.patientData.get("employer-address-city").toString());
+        patientEmployerState.setText(PatientHome.patientData.get("employer-address-state").toString());
+        patientEmployerZip.setText(PatientHome.patientData.get("employer-address-zip").toString());
 
         return fragView;
     }

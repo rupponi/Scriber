@@ -21,7 +21,7 @@
 
             <EditText
 
-                android:id="@+id/EPrimaryEmergencyInput"
+                android:id="@+id/edit_primary_emergency_name"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="First and Last Name"
