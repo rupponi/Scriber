@@ -52,13 +52,13 @@ public class PersonalTab extends Fragment {
         patientStreetAddress.setText(PatientHome.patientData.get("address-street").toString());
         patientCity.setText(PatientHome.patientData.get("address-city").toString());
         patientState.setText(PatientHome.patientData.get("address-state").toString());
-        patientZip.setText(PatientHome.patientData.get("address-zip-code").toString());
+        patientZip.setText(PatientHome.patientData.get("address-zip").toString());
 
         patientPhone.setText(PatientHome.patientData.get("primary-phone").toString());
         patientGender.setText(PatientHome.patientData.get("gender").toString());
+        patientAge.setText(PatientHome.patientData.get("date-of-birth").toString());
         patientMarital.setText(PatientHome.patientData.get("marital-status").toString());
         patientEthnicity.setText(PatientHome.patientData.get("ethnicity").toString());
-        patientAge.setText(PatientHome.patientData.get("date-of-birth").toString());
 
         patientPrimaryInsurance.setText(PatientHome.patientData.get("primary-insurance").toString());
         patientPrimaryInsurancePolicy.setText(PatientHome.patientData.get("primary-policy").toString());

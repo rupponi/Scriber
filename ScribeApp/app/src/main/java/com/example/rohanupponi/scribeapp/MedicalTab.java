@@ -34,12 +34,12 @@ public class MedicalTab extends Fragment {
         surgicalHistory = fragView.findViewById(R.id.SurgicalHistoryInput);
         conditions = fragView.findViewById(R.id.ConditionsInput);
 
-        primaryEmergency.setText(PatientHome.patientData.get("primary-em-contact").toString());
-        primaryEmergencyPhone.setText(PatientHome.patientData.get("primary-em-phone").toString());
-        secondaryEmergency.setText(PatientHome.patientData.get("secondary-em-contact").toString());
-        secondaryEmergencyPhone.setText(PatientHome.patientData.get("secondary-em-phone").toString());
+        primaryEmergency.setText(PatientHome.patientData.get("primary-emergency-name").toString());
+        primaryEmergencyPhone.setText(PatientHome.patientData.get("primary-emergency-phone").toString());
+        secondaryEmergency.setText(PatientHome.patientData.get("secondary-emergency-name").toString());
+        secondaryEmergencyPhone.setText(PatientHome.patientData.get("secondary-emergency-phone").toString());
         bloodType.setText(PatientHome.patientData.get("blood-type").toString());
-        prescriptions.setText(PatientHome.patientData.get("prescription-dosage").toString());
+        prescriptions.setText(PatientHome.patientData.get("prescriptions").toString());
         vaccinations.setText(PatientHome.patientData.get("vaccinations").toString());
         lifestyle.setText(PatientHome.patientData.get("lifestyle").toString());
         allergies.setText(PatientHome.patientData.get("allergies").toString());

@@ -27,7 +27,7 @@ public class EditPatient extends AppCompatActivity {
                      editPrimaryEmergencyContact, editPrimaryEmergencyContactNumber,
                      editSecondaryEmergencyContact, editSecondaryEmergencyContactNumber;
 
-    private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus, updatedEmployerState;
+    private Spinner updatedState, updatedGender, updatedEthnicity, updatedMaritalStatus, updatedEmployerState, updatedBloodType;
     private ViewPager viewPager;
 
     @Override
@@ -82,7 +82,7 @@ public class EditPatient extends AppCompatActivity {
                 editSecondaryEmergencyContact = findViewById(R.id.ESecondaryEmergencyInput);
                 editSecondaryEmergencyContactNumber = findViewById(R.id.ESecondaryEContactInput);
 
-                EditText Bloodtype = findViewById(R.id.EBloodtypeInput);
+                updatedBloodType = findViewById(R.id.EBloodtypeInput);
                 EditText Prescription = findViewById(R.id.EPrescriptionInput);
                 EditText Vaccination = findViewById(R.id.EVaccinationInput);
                 EditText Lifestyle = findViewById(R.id.ELifestyleInput);
@@ -101,7 +101,6 @@ public class EditPatient extends AppCompatActivity {
                 String SecEmer = editSecondaryEmergencyContact.getText().toString().trim();
                 String SecEmerContact = editSecondaryEmergencyContactNumber.getText().toString().trim();
 
-                String Bltype = Bloodtype.getText().toString().trim();
                 String Presc = Prescription.getText().toString().trim();
                 String Vacc = Vaccination.getText().toString().trim();
                 String life = Lifestyle.getText().toString().trim();
@@ -117,15 +116,15 @@ public class EditPatient extends AppCompatActivity {
 
                 db.collection("patients").document(PatientHome.patientData.getId()).update(
                         "name", updatedName.getText().toString().trim(),
-                        "street-address", updatedStreet.getText().toString().trim(),
-                        "city", updatedCity.getText().toString().trim(),
-                        "state", updatedState.getSelectedItem(),
+                        "address-street", updatedStreet.getText().toString().trim(),
+                        "address-city", updatedCity.getText().toString().trim(),
+                        "address-state", updatedState.getSelectedItem(),
+                        "address-zip", updatedZip.getText().toString().trim(),
+                        "primary-phone", updatedPhone.getText().toString().trim(),
                         "gender", updatedGender.getSelectedItem(),
                         "date-of-birth", updatedBirthdate.getText().toString().trim(),
-                        "primary-phone", updatedPhone.getText().toString().trim(),
-                        "zip-code", updatedZip.getText().toString().trim(),
-                        "ethnicity", updatedEthnicity.getSelectedItem(),
                         "marital-status", updatedMaritalStatus.getSelectedItem(),
+                        "ethnicity", updatedEthnicity.getSelectedItem(),
                         "primary-insurance", editPrimaryInsurance.getText().toString().trim(),
                         "primary-policy", editPrimaryInsurancePolicy.getText().toString().trim(),
                         "primary-group", editPrimaryInsuranceGroup.getText().toString().trim(),
@@ -133,17 +132,17 @@ public class EditPatient extends AppCompatActivity {
                         "secondary-policy", editSecondaryInsurancePolicy.getText().toString().trim(),
                         "secondary-group", editSecondaryInsuranceGroup.getText().toString().trim(),
                         "employer", editEmployer.getText().toString().trim(),
-                        "employer-street", editEmployerStreet.getText().toString().trim(),
-                        "employer-city", editEmployerCity.getText().toString().trim(),
-                        "employer-state", updatedEmployerState.getSelectedItem(),
-                        "employer-zip", editEmployerZip.getText().toString().trim(),
+                        "employer-address-street", editEmployerStreet.getText().toString().trim(),
+                        "employer-address-city", editEmployerCity.getText().toString().trim(),
+                        "employer-address-state", updatedEmployerState.getSelectedItem(),
+                        "employer-address-zip", editEmployerZip.getText().toString().trim(),
 
-                        "primary-em-contact", PrimEmer,
-                        "primary-em-phone", PrimEmerContact,
-                        "secondary-em-contact", SecEmer,
-                        "secondary-em-phone", SecEmerContact,
-                        "blood-type", Bltype,
-                        "prescription-dosage", Presc,
+                        "primary-emergency-name", PrimEmer,
+                        "primary-emergency-phone", PrimEmerContact,
+                        "secondary-emergency-name", SecEmer,
+                        "secondary-emergency-phone", SecEmerContact,
+                        "blood-type", updatedBloodType.getSelectedItem(),
+                        "prescriptions", Presc,
                         "vaccinations", Vacc,
                         "lifestyle", life,
                         "allergies", allergies,

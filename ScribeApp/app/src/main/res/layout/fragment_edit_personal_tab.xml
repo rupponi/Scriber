@@ -72,7 +72,7 @@
                 android:id="@+id/edit_birthdate_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="##/##/####"
+                android:hint="@string/example_date_of_birth"
                 android:inputType="number"
                 android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginStart="@dimen/edittext_screen_border"
@@ -90,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
+                android:hint="@string/example_address_street"
                 android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
@@ -105,6 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:hint="@string/example_address_city"
                 android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
@@ -134,7 +136,7 @@
                 android:id="@+id/edit_zip_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="#####"
+                android:hint="@string/example_address_zip"
                 android:inputType="number"
                 android:maxLength="5"
                 android:textSize="@dimen/user_entry_field_text"
@@ -181,7 +183,7 @@
                 android:id="@+id/edit_phone_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="###-###-####"
+                android:hint="@string/example_phone"
                 android:inputType="phone"
                 android:maxLength="15"
                 android:layout_marginStart="@dimen/edittext_screen_border"
@@ -206,7 +208,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Primary Insurance Policy #"
+                android:text="Primary Insurance Policy Number"
                 android:layout_marginTop="@dimen/text_entry_separator"/>
 
             <EditText
@@ -214,7 +216,6 @@
                 android:id="@+id/edit_primary_insurance_policy_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
                 android:textSize="@dimen/user_entry_field_text"
                 android:layout_marginStart="@dimen/edittext_screen_border"
                 android:layout_marginTop="@dimen/text_entry_separator" />

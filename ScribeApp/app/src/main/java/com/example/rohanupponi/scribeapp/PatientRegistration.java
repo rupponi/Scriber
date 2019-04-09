@@ -105,47 +105,45 @@ public class PatientRegistration extends AppCompatActivity {
                 }
 //====================================================================================================================//
 
-//============== SET UP DEFAULT VALUES FOR OTHER PATIENT PROFILE ITEMS ===============================================//
-                String[] newPhone = new String[] {"000", "000", "0000"};
-//====================================================================================================================//
-
 //============== GENERATE NEW PATIENT FROM INPUT FIELD DATA ==========================================================//
                 newPatient = new HashMap<>();
                 newPatient.put("name", name);
                 newPatient.put("address-street", address);
                 newPatient.put("address-city", city);
                 newPatient.put("address-state", state);
-                newPatient.put("address-zip-code", Integer.parseInt(sZip));
+                newPatient.put("address-zip", Integer.parseInt(sZip));
 
-                newPatient.put("primary-phone", "000-000-0000");
+                newPatient.put("primary-phone", "");
                 newPatient.put("gender", Gender.NONE);
-                newPatient.put("date-of-birth", "01/01/0000");
+                newPatient.put("date-of-birth", "");
                 newPatient.put("marital-status", MaritalStatus.NONE);
                 newPatient.put("ethnicity", Ethnicity.NONE);
-                newPatient.put("primary-insurance","Not Specified");
-                newPatient.put("primary-policy","0");
-                newPatient.put("primary-group", "0");
-                newPatient.put("secondary-insurance","Not Specified");
-                newPatient.put("secondary-policy","0");
-                newPatient.put("secondary-group", "0");
-                newPatient.put("employer", "Not Specified");
-                newPatient.put("employer-address-street", "Not Specified");
-                newPatient.put("employer-address-city", "Not Specified");
-                newPatient.put("employer-address-state", State.NONE);
-                newPatient.put("employer-address-zip","00000");
 
-                newPatient.put("primary-em-contact", "Not Specified");
-                newPatient.put("primary-em-phone", "Not Specified");
-                newPatient.put("secondary-em-contact", "Not Specified");
-                newPatient.put("secondary-em-phone","Not Specified");
-                newPatient.put("blood-type", "Not Specified");
-                newPatient.put("prescription-dosage", "Not Specified");
-                newPatient.put("vaccinations", "Not Specified");
-                newPatient.put("lifestyle", "Not Specified");
-                newPatient.put("allergies", "Not Specified");
-                newPatient.put("family-history", "Not Specified");
-                newPatient.put("surgical-history", "Not Specified");
-                newPatient.put("conditions", "Not Specified");
+                newPatient.put("primary-insurance","");
+                newPatient.put("primary-policy","");
+                newPatient.put("primary-group", "");
+                newPatient.put("secondary-insurance","");
+                newPatient.put("secondary-policy","");
+                newPatient.put("secondary-group", "");
+
+                newPatient.put("employer", "");
+                newPatient.put("employer-address-street", "");
+                newPatient.put("employer-address-city", "");
+                newPatient.put("employer-address-state", State.NONE);
+                newPatient.put("employer-address-zip","");
+
+                newPatient.put("primary-emergency-name", "");
+                newPatient.put("primary-emergency-phone", "");
+                newPatient.put("secondary-emergency-name", "");
+                newPatient.put("secondary-emergency-phone","");
+                newPatient.put("blood-type", BloodType.NONE);
+                newPatient.put("prescriptions", "");
+                newPatient.put("vaccinations", "");
+                newPatient.put("lifestyle", "");
+                newPatient.put("allergies", "");
+                newPatient.put("family-history", "");
+                newPatient.put("surgical-history", "");
+                newPatient.put("conditions", "");
 
 
 

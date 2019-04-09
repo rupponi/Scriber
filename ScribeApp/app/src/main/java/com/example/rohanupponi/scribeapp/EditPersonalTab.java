@@ -63,7 +63,7 @@ public class EditPersonalTab extends Fragment {
 
 
         editZip = fragView.findViewById(R.id.edit_zip_input);
-        editZip.setText(PatientHome.patientData.get("address-zip-code").toString());
+        editZip.setText(PatientHome.patientData.get("address-zip").toString());
 
         editPhoneNumber = fragView.findViewById(R.id.edit_phone_input);
         editPhoneNumber.setText(PatientHome.patientData.get("primary-phone").toString());

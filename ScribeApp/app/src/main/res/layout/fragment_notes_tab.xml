@@ -107,7 +107,6 @@
                     android:id="@+id/AppointmentDateInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textSize="@dimen/user_profile_text"/>
@@ -130,7 +129,6 @@
                     android:id="@+id/PhysicianNameInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textSize="@dimen/user_profile_text"/>
@@ -153,7 +151,6 @@
                     android:id="@+id/PrescriptionChangesInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
                     android:singleLine="false"
                     android:maxLines="8"
                     android:textColor="@color/black"
@@ -177,7 +174,6 @@
                     android:id="@+id/NotesInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
                     android:singleLine="false"
                     android:maxLines="8"
                     android:textColor="@color/black"
@@ -190,6 +186,10 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="2dp"
                     android:background="@color/profile_field_border_color" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"/>
 
 
             </LinearLayout>

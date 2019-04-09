@@ -19,6 +19,10 @@ enum MaritalStatus {
     NONE, SINGLE, MARRIED, WIDOWED, SEPARATED, DIVORCED
 }
 
+enum BloodType {
+    NONE, A_POS, A_NEG, B_POS, B_NEG, AB_POS, AB_NEG, O_POS, O_NEG
+}
+
 public class Utils {
 
     public static State getState(int stateIndex) {
@@ -35,5 +39,9 @@ public class Utils {
 
     public static MaritalStatus getMaritalStatus(int maritalStatusIndex) {
         return MaritalStatus.values()[maritalStatusIndex];
+    }
+
+    public BloodType getBloodType(int bloodTypeIndex) {
+        return BloodType.values()[bloodTypeIndex];
     }
 }
