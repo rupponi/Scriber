@@ -11,6 +11,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
             android:orientation="vertical">
 
 
@@ -26,9 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="PAST APPOINTMENTS"
+                android:text="NOTES"
                 android:gravity="center"
-                android:layout_marginRight="20dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/user_profile_text" />
 
@@ -39,153 +40,23 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2sp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="2dp"
                 android:background="@color/colorPrimary" />
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20sp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/edit_notes"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "APPOINTMENT NAME"/>
-
-                <TextView
-                    android:id="@+id/AppointmentNameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "ORGANIZATION/HOSPITAL"/>
-
-                <TextView
-                    android:id="@+id/OrganizationInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "DATE OF APPOINTMENT"/>
-
-                <TextView
-                    android:id="@+id/AppointmentDateInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "PHYSICIAN NAME"/>
-
-                <TextView
-                    android:id="@+id/PhysicianNameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "CHANGES TO PRESCRIPTIONS"/>
-
-                <TextView
-                    android:id="@+id/PrescriptionChangesInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="false"
-                    android:maxLines="8"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor = "@color/colorPrimary"
-                    android:text = "DOCTOR'S NOTES AND ADVICE"/>
-
-                <TextView
-                    android:id="@+id/NotesInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="false"
-                    android:maxLines="8"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/user_profile_text"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2sp"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/profile_field_border_color" />
+                    android:layout_height="match_parent"
+                    android:background="@drawable/box_borders"
+                    android:gravity="top|left"
+                    android:padding="5sp"
+                    android:lines="20"
+                    android:hint="@string/example_notes"
+                    android:layout_marginTop="20dp" />
 
                 <View
                     android:layout_width="match_parent"
