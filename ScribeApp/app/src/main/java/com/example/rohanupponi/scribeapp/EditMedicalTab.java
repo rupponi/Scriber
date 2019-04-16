@@ -32,14 +32,14 @@ public class EditMedicalTab extends Fragment {
         editPrimaryEmergencyContactName = fragView.findViewById(R.id.edit_primary_emergency_name);
         editPrimaryEmergencyContactName.setText(PatientHome.patientData.get("primary-emergency-name").toString());
 
-        editPrimaryEmergencyContactPhone = fragView.findViewById(R.id.EPrimaryEContactInput);
+        editPrimaryEmergencyContactPhone = fragView.findViewById(R.id.edit_primary_emergency_phone);
         editPrimaryEmergencyContactPhone.setText(PatientHome.patientData.get("primary-emergency-phone").toString());
         editPrimaryEmergencyContactPhone.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
-        editSecondaryEmergencyContactName = fragView.findViewById(R.id.ESecondaryEmergencyInput);
+        editSecondaryEmergencyContactName = fragView.findViewById(R.id.edit_secondary_emergency_name);
         editSecondaryEmergencyContactName.setText(PatientHome.patientData.get("secondary-emergency-name").toString());
 
-        editSecondaryEmergencyContactPhone = fragView.findViewById(R.id.ESecondaryEContactInput);
+        editSecondaryEmergencyContactPhone = fragView.findViewById(R.id.edit_secondary_emergency_phone);
         editSecondaryEmergencyContactPhone.setText(PatientHome.patientData.get("secondary-emergency-phone").toString());
         editSecondaryEmergencyContactPhone.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
@@ -56,25 +56,25 @@ public class EditMedicalTab extends Fragment {
         editBloodType.setSelection(currentBloodTypeIndex);
 
 
-        editPatientPrescriptions = fragView.findViewById(R.id.EPrescriptionInput);
+        editPatientPrescriptions = fragView.findViewById(R.id.edit_prescriptions);
         editPatientPrescriptions.setText(PatientHome.patientData.get("prescriptions").toString());
 
-        editPatientVaccinations = fragView.findViewById(R.id.EVaccinationInput);
+        editPatientVaccinations = fragView.findViewById(R.id.edit_vaccinations);
         editPatientVaccinations.setText(PatientHome.patientData.get("vaccinations").toString());
 
-        editPatientLifestyle = fragView.findViewById(R.id.ELifestyleInput);
+        editPatientLifestyle = fragView.findViewById(R.id.edit_lifestyle);
         editPatientLifestyle.setText(PatientHome.patientData.get("lifestyle").toString());
 
-        editPatientAllergies = fragView.findViewById(R.id.EAllergiesInput);
+        editPatientAllergies = fragView.findViewById(R.id.edit_allergies);
         editPatientAllergies.setText(PatientHome.patientData.get("allergies").toString());
 
-        editPatientFamilyHistory = fragView.findViewById(R.id.EFamilyHistoryInput);
+        editPatientFamilyHistory = fragView.findViewById(R.id.edit_family_history);
         editPatientFamilyHistory.setText(PatientHome.patientData.get("family-history").toString());
 
-        editPatientSurgicalHistory = fragView.findViewById(R.id.ESurgicalHistoryInput);
+        editPatientSurgicalHistory = fragView.findViewById(R.id.edit_surgical_history);
         editPatientSurgicalHistory.setText(PatientHome.patientData.get("surgical-history").toString());
 
-        editPatientMedicalConditions = fragView.findViewById(R.id.EConditionsInput);
+        editPatientMedicalConditions = fragView.findViewById(R.id.edit_medical_conditions);
         editPatientMedicalConditions.setText(PatientHome.patientData.get("conditions").toString());
 
         return fragView;

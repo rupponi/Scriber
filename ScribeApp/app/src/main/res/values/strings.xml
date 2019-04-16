@@ -53,6 +53,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <!-- Example fields for empty inputs. -->
+    <string name="example_name">e.g. Roger Smith</string>
     <string name="example_address_street">e.g. 1234 Elm St.</string>
     <string name="example_address_city">e.g. San Francisco</string>
     <string name="example_address_zip">e.g. 54345</string>
@@ -66,6 +67,15 @@
 
     <string name="example_primary_emergency_name">e.g. Dwight Scott</string>
     <string name="example_secondary_emergency_name">e.g. Angela Beesley</string>
+    <string name="example_prescriptions">e.g. Levothyroxine,  1mg</string>
+    <string name="example_vaccinations">e.g. Tetanus</string>
+    <string name="example_lifestyle">e.g.\nRuns 1 mile daily\nSmokes twice a day</string>
+    <string name="example_allergies">e.g. Peanuts, Gluten</string>
+    <string name="example_family_history">e.g.\nHeart disease on mother\'s side\nDiabetes on father\'s side</string>
+    <string name="example_surgical_history">e.g. Colonoscopy last year in May.</string>
+    <string name="example_medical_conditions">e.g. Hypoglycemia, mild Asthma, Arthritis</string>
+
+    <string name="example_notes">e.g.\nAppointment with Dr. Phillips next Thursday\nPick up antibiotics from Walgreens.</string>
 
 
     <!-- All States -->

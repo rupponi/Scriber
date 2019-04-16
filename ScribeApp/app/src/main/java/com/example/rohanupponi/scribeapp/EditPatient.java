@@ -78,19 +78,19 @@ public class EditPatient extends AppCompatActivity {
 
 
                 editPrimaryEmergencyContact = findViewById(R.id.edit_primary_emergency_name);
-                editPrimaryEmergencyContactNumber = findViewById(R.id.EPrimaryEContactInput);
-                editSecondaryEmergencyContact = findViewById(R.id.ESecondaryEmergencyInput);
-                editSecondaryEmergencyContactNumber = findViewById(R.id.ESecondaryEContactInput);
+                editPrimaryEmergencyContactNumber = findViewById(R.id.edit_primary_emergency_phone);
+                editSecondaryEmergencyContact = findViewById(R.id.edit_secondary_emergency_name);
+                editSecondaryEmergencyContactNumber = findViewById(R.id.edit_secondary_emergency_phone);
 
                 updatedBloodType = findViewById(R.id.EBloodtypeInput);
-                EditText Prescription = findViewById(R.id.EPrescriptionInput);
-                EditText Vaccination = findViewById(R.id.EVaccinationInput);
-                EditText Lifestyle = findViewById(R.id.ELifestyleInput);
+                EditText Prescription = findViewById(R.id.edit_prescriptions);
+                EditText Vaccination = findViewById(R.id.edit_vaccinations);
+                EditText Lifestyle = findViewById(R.id.edit_lifestyle);
 
-                EditText Allergies = findViewById(R.id.EAllergiesInput);
-                EditText FamilyHistory = findViewById(R.id.EFamilyHistoryInput);
-                EditText SurgicalHistory = findViewById(R.id.ESurgicalHistoryInput);
-                EditText Conditions = findViewById(R.id.EConditionsInput);
+                EditText Allergies = findViewById(R.id.edit_allergies);
+                EditText FamilyHistory = findViewById(R.id.edit_family_history);
+                EditText SurgicalHistory = findViewById(R.id.edit_surgical_history);
+                EditText Conditions = findViewById(R.id.edit_medical_conditions);
 
                 String sEmployer = editEmployer.getText().toString().trim();
 
