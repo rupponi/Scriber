@@ -87,7 +87,7 @@ public class PatientRegistration extends AppCompatActivity {
 //============== IF A FIELD IS EMPTY, YOU SHALL NOT PASS =============================================================//
                 if (name.matches("") ||email.matches("") || address.matches("") || city.matches("") || sZip.matches("") || password.matches("") || passwordConfirm.matches("")) {
                     Toast incompleteInfo = Toast.makeText(getApplicationContext(),
-                            "Information incomplete!",
+                            "We are currently missing some information. Please be sure to fill in all fields.",
                             Toast.LENGTH_LONG
                     );
                     incompleteInfo.show();
@@ -102,6 +102,7 @@ public class PatientRegistration extends AppCompatActivity {
                             Toast.LENGTH_LONG
                     );
                     test.show();
+                    return;
                 }
 //====================================================================================================================//
 
@@ -160,7 +161,7 @@ public class PatientRegistration extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(PatientRegistration.TAG, "Successful registration of patient.");
-                                    Toast successfulRegistration = Toast.makeText(getApplicationContext(), "Congratulations! You are now registered!", Toast.LENGTH_LONG);
+                                    Toast successfulRegistration = Toast.makeText(getApplicationContext(), "Congratulations! You have now been registered.", Toast.LENGTH_LONG);
                                     successfulRegistration.show();
 
                                     Intent redirectToPatientLogin = new Intent(getApplicationContext(), LoginPage.class);
@@ -179,7 +180,7 @@ public class PatientRegistration extends AppCompatActivity {
                             });
                         }
                         else {
-                            Toast test = Toast.makeText(getApplicationContext(), "Registration: Failure to register credentials", Toast.LENGTH_LONG);
+                            Toast test = Toast.makeText(getApplicationContext(), "Sorry! We experienced some issues in connectivity. Please check your connection and try again.", Toast.LENGTH_LONG);
                             test.show();
                         }
                     }

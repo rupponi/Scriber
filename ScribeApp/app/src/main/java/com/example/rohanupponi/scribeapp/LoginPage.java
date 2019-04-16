@@ -102,7 +102,7 @@ public class LoginPage extends AppCompatActivity {
                                         else {
                                             progressBar.setVisibility(View.GONE);
                                             Log.d(LoginPage.TAG, "Couldn't find user in database");
-                                            Toast failure = Toast.makeText(getApplicationContext(), "Failure to find data!", Toast.LENGTH_LONG);
+                                            Toast failure = Toast.makeText(getApplicationContext(), "We apologize! Your profile is temporarily unavailable.", Toast.LENGTH_LONG);
                                             failure.show();
                                         }
                                     }
@@ -111,7 +111,7 @@ public class LoginPage extends AppCompatActivity {
                         }
                         else {
                             progressBar.setVisibility(View.GONE);
-                            Toast failure = Toast.makeText(getApplicationContext(), "Failure to login!", Toast.LENGTH_LONG);
+                            Toast failure = Toast.makeText(getApplicationContext(), "Incorrect username or password.", Toast.LENGTH_LONG);
                             Log.d(LoginPage.TAG, "Credentials invalid.");
                             failure.show();
                         }

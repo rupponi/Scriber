@@ -40,13 +40,13 @@ public class ForgotPassword extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast successfulReset = Toast.makeText(getApplicationContext(), "Please check your email to reset your password!", Toast.LENGTH_LONG);
+                            Toast successfulReset = Toast.makeText(getApplicationContext(), "Reset email successfully sent! Please check your provided email.", Toast.LENGTH_LONG);
                             Intent returnToLogin = new Intent(getApplicationContext(), LoginPage.class);
                             successfulReset.show();
                             startActivity(returnToLogin);
                         }
                         else {
-                            Toast failedReset = Toast.makeText(getApplicationContext(), "Oops! We were not able to reset your password. Please check your connection!", Toast.LENGTH_LONG);
+                            Toast failedReset = Toast.makeText(getApplicationContext(), "It seems something went wrong. Please check your connectivity and ensure the email is valid.", Toast.LENGTH_LONG);
                             failedReset.show();
                         }
                     }
