@@ -7,6 +7,8 @@ android:
     - android-19
     - platform-tools
 before_script:
+  - chmod a+x gradlew
+  - chmod a+x gradle/wrapper/gradle-wrapper.jar
   - git config --global core.autocrlf false
   - gradle wrapper --gradle-version 3.5.0
 
