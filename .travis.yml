@@ -26,6 +26,7 @@ android:
     
 before_install:
  - chmod +x gradlew
+ - gradle wrapper --gradle-version 3.5.0
 
 deploy:
   skip-cleanup: true
