@@ -7,7 +7,7 @@ before_install:
  - chmod +x gradlew
  
 install:
-  - gradle wrapper --gradle-version 4.2
+  - gradle wrapper --gradle-version 3.5.0
 
 script:
     - ./gradlew testDevelopmentDebug
