@@ -1,10 +1,7 @@
 language: android
-sudo: required
-dist: trusty
+
 android:
   components:
-    - tools
-    - platform-tools
  
     # BuildTools version.
     - build-tools-26.0.2
