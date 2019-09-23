@@ -26,3 +26,16 @@ android:
     
 before_install:
  - chmod +x gradlew
+
+deploy:
+  skip-cleanup: true
+  # Publish docs
+  provider: script
+  script: npm run test:deploy-results
+  on:
+    branch: build
+  # Test reports
+  provider: script
+  script: npm run test:deploy-results
+  on:
+    branch: build
