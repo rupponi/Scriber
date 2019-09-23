@@ -1,0 +1,19 @@
+language: android
+dist: trusty
+android:
+  components:
+    - tools
+    - platform-tools
+ 
+    # BuildTools version.
+    - build-tools-26.0.2
+    
+    # Android SDK compile version.
+    - android-26
+    
+    # Google Services used
+    - extra-google-google_play_services
+    
+    # System image used for runtime
+    - sys-img-x86-android-26
+    - sys-img-armeabi-v7a-android-17
