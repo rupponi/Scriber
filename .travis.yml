@@ -8,7 +8,7 @@ android:
     - platform-tools
 before_script:
   - git config --global core.autocrlf false
-  - gradle wrapper --gradle-version 5.4.1
+  - gradle wrapper --gradle-version 3.5.0
 
 licenses:
   - '.+'
