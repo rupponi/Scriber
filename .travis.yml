@@ -5,8 +5,9 @@ android:
 
 before_install:
  - chmod +x gradlew
- - pwd
- - ls -la
+ 
+install:
+  - gradle wrapper --gradle-version 4.2
 
 script:
     - ./gradlew testDevelopmentDebug
