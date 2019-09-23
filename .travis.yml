@@ -9,3 +9,9 @@ android:
 before_script:
   - chmod +x gradlew
   - git config --global core.autocrlf false
+
+licenses:
+  - '.+'
+
+script:
+ - ./gradlew assembleRelease --stacktrace
