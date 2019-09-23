@@ -5,9 +5,7 @@ android:
 
 before_install:
  - chmod +x gradlew
- 
-install:
-  - gradle wrapper --gradle-version 3.5.0
+ - ./gradlew clean
 
 script:
     - ./gradlew testDevelopmentDebug
