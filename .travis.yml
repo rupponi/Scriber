@@ -12,6 +12,4 @@ android:
     -sys-image-x86-android-28
 
 before_script:
-  - chmod +x gradlew
-  - git config --global core.autocrlf false
   - gradle wrapper --gradle-version 5.4.1
