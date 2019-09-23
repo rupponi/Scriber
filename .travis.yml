@@ -10,6 +10,7 @@ before_script:
   - chmod a+x gradlew
   - chmod a+x gradle/wrapper/gradle-wrapper.jar
   - git config --global core.autocrlf false
+  - gradle wrapper --gradle-version 4.0.1
 
 licenses:
   - '.+'
