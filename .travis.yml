@@ -41,4 +41,3 @@ android:
      - echo no | android create avd --force -n test -t "Google Inc.:Google APIs:"$EMULATOR_API_LEVEL --abi $ANDROID_ABI
      - emulator -avd test -no-skin -no-audio -no-window &
      - android-wait-for-emulator
-Link to gradle file: build.gradle
