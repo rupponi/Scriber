@@ -3,8 +3,8 @@ dist: trusty
 android:
   components:
     - tools
-    - build-tools-19.1.0
-    - android-19
+    - build-tools-28.0.3
+    - android-28
     - platform-tools
 before_script:
   - chmod a+x gradlew
