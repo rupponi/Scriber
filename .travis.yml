@@ -12,6 +12,3 @@ before_script:
 
 licenses:
   - '.+'
-
-script:
- - ./gradlew assembleRelease --stacktrace
