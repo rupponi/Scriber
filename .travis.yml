@@ -1,11 +1,39 @@
 language: android
-dist: trusty
+jdk: oraclejdk8
+sudo: false
+
+env:
+  global:
+    - ANDROID_API_LEVEL=28
+    - ANDROID_EMULATOR_LEVEL=18
+    - ANDROID_BUILD_TOOLS_VERSION=28.0.3
+    - ADB_INSTALL_TIMEOUT=20
+    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_TAG=google_apis
+    - QEMU_AUDIO_DRV=none
+
 android:
   components:
     - tools
-    - build-tools-28.0.3
-    - android-28
     - platform-tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - android-$ANDROID_EMULATOR_LEVEL
+    - extra-android-support
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - sys-img-$ANDROID_ABI-google_apis-$ANDROID_EMULATOR_LEVEL
+
+licenses:
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+
+before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+  - echo no | avdmanager create avd --force -n test -k "system-images;android-$EMULATOR_VERSION;$ABI"
+    
 before_script:
   - chmod a+x gradlew
   - chmod a+x gradle/wrapper/gradle-wrapper.jar
@@ -16,4 +44,6 @@ licenses:
   - '.+'
 
 script:
-  - gradlew build
+  - ./gradlew dependencyCheckAnalyze build
+  - adb shell input keyevent 82
+  - ./gradlew connectedCheck -PdisablePreDex --stacktrace
