@@ -44,4 +44,3 @@ licenses:
 script:
   - ./gradlew dependencyCheckAnalyze build
   - adb shell input keyevent 82
-  - ./gradlew connectedCheck -PdisablePreDex --stacktrace
